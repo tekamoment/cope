@@ -1,0 +1,59 @@
+PODS:
+  - Charts (2.2.5):
+    - Charts/Core (= 2.2.5)
+  - Charts/Core (2.2.5)
+  - Eureka (1.7.0)
+  - JTAppleCalendar (5.0.1)
+  - KCFloatingActionButton (2.0.1)
+  - TagListView (1.0.0)
+
+DEPENDENCIES:
+  - Charts (from `https://github.com/danielgindi/Charts.git`, branch `Swift-3.0`)
+  - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `Swift3`)
+  - JTAppleCalendar (from `https://github.com/patchthecode/JTAppleCalendar.git`, branch `Swift3`)
+  - KCFloatingActionButton (from `https://github.com/kciter/KCFloatingActionButton.git`)
+  - TagListView (from `https://github.com/xhacker/TagListView.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  Charts:
+    :branch: Swift-3.0
+    :git: https://github.com/danielgindi/Charts.git
+  Eureka:
+    :branch: Swift3
+    :git: https://github.com/xmartlabs/Eureka.git
+  JTAppleCalendar:
+    :branch: Swift3
+    :git: https://github.com/patchthecode/JTAppleCalendar.git
+  KCFloatingActionButton:
+    :git: https://github.com/kciter/KCFloatingActionButton.git
+  TagListView:
+    :branch: master
+    :git: https://github.com/xhacker/TagListView.git
+
+CHECKOUT OPTIONS:
+  Charts:
+    :commit: 2dd22b903a78d0d34d07ef71728c41ac22f6a114
+    :git: https://github.com/danielgindi/Charts.git
+  Eureka:
+    :commit: 2c06e130d99204ceff807c28bbb9ba96bc5b6a25
+    :git: https://github.com/xmartlabs/Eureka.git
+  JTAppleCalendar:
+    :commit: 7936627b029104d0d56c2ad68496fdbb436c164d
+    :git: https://github.com/patchthecode/JTAppleCalendar.git
+  KCFloatingActionButton:
+    :commit: 6de2c1c5190f2185d0a2464854ca3cff520f27af
+    :git: https://github.com/kciter/KCFloatingActionButton.git
+  TagListView:
+    :commit: 876785a171d4402bb5defc6361d3d02fe4fcdf26
+    :git: https://github.com/xhacker/TagListView.git
+
+SPEC CHECKSUMS:
+  Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
+  Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
+  JTAppleCalendar: cb2417b1f3367d1993e31720a663646742139a5c
+  KCFloatingActionButton: 6374d1072fedfb45606ff3bc07d3e1c3f1e1ddcc
+  TagListView: 6bf4bded034c4c90b1e90d8cd3d8e1d852dba0a8
+
+PODFILE CHECKSUM: d498379796db90d48a7b8e3ee5f27bdb43246d9e
+
+COCOAPODS: 1.1.0.rc.2

@@ -1,0 +1,6 @@
+framework module Pods_CopeUITests {
+  umbrella header "Pods-CopeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
