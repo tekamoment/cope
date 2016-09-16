@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180761DA1D7E721900EB197A /* SummaryChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180761D91D7E721900EB197A /* SummaryChartCell.swift */; };
+		1860C2291D7EA73A005A636A /* AddMedicationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860C2281D7EA73A005A636A /* AddMedicationFormViewController.swift */; };
+		18A454D11D7DD189003B1190 /* SummaryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A454D01D7DD189003B1190 /* SummaryCollectionViewController.swift */; };
+		18A454D31D7DD1E6003B1190 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A454D21D7DD1E6003B1190 /* SurveyViewController.swift */; };
+		18A454D51D7DD970003B1190 /* SurveyOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A454D41D7DD970003B1190 /* SurveyOptionCell.swift */; };
+		18A454D71D7DDB7F003B1190 /* SurveyHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A454D61D7DDB7F003B1190 /* SurveyHeaderReusableView.swift */; };
+		18A454DD1D7DE727003B1190 /* DayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A454DC1D7DE727003B1190 /* DayCellView.xib */; };
+		18A454DF1D7DE761003B1190 /* DayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A454DE1D7DE761003B1190 /* DayCellView.swift */; };
+		18A454E11D7E48D1003B1190 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A454E01D7E48D1003B1190 /* CalendarViewController.swift */; };
 		18F35DE51D76ACF1004E721B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F35DE41D76ACF1004E721B /* AppDelegate.swift */; };
-		18F35DE71D76ACF1004E721B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F35DE61D76ACF1004E721B /* FirstViewController.swift */; };
-		18F35DE91D76ACF1004E721B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F35DE81D76ACF1004E721B /* SecondViewController.swift */; };
 		18F35DEC1D76ACF1004E721B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F35DEA1D76ACF1004E721B /* Main.storyboard */; };
 		18F35DEE1D76ACF1004E721B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F35DED1D76ACF1004E721B /* Assets.xcassets */; };
 		18F35DF11D76ACF1004E721B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F35DEF1D76ACF1004E721B /* LaunchScreen.storyboard */; };
 		18F35DFC1D76ACF2004E721B /* CopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F35DFB1D76ACF2004E721B /* CopeTests.swift */; };
 		18F35E071D76ACF2004E721B /* CopeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F35E061D76ACF2004E721B /* CopeUITests.swift */; };
+		1C79F5844211AFC03E30EFCB /* Pods_CopeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8012DB6D187DE97AB973FEE /* Pods_CopeUITests.framework */; };
+		7BBF5BEB898350D2390957A2 /* Pods_CopeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87C355E7D5DBC930251D164 /* Pods_CopeTests.framework */; };
+		9FEB863F751C81E819D65BBC /* Pods_Cope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F455E059B8FB39CB5B479090 /* Pods_Cope.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +45,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180761D91D7E721900EB197A /* SummaryChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryChartCell.swift; path = Views/SummaryChartCell.swift; sourceTree = "<group>"; };
+		1860C2281D7EA73A005A636A /* AddMedicationFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMedicationFormViewController.swift; path = "View controllers/AddMedicationFormViewController.swift"; sourceTree = "<group>"; };
+		18A454D01D7DD189003B1190 /* SummaryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryCollectionViewController.swift; path = "View controllers/SummaryCollectionViewController.swift"; sourceTree = "<group>"; };
+		18A454D21D7DD1E6003B1190 /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyViewController.swift; path = "View controllers/SurveyViewController.swift"; sourceTree = "<group>"; };
+		18A454D41D7DD970003B1190 /* SurveyOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyOptionCell.swift; path = Views/SurveyOptionCell.swift; sourceTree = "<group>"; };
+		18A454D61D7DDB7F003B1190 /* SurveyHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyHeaderReusableView.swift; path = Views/SurveyHeaderReusableView.swift; sourceTree = "<group>"; };
+		18A454DC1D7DE727003B1190 /* DayCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DayCellView.xib; path = Views/DayCellView.xib; sourceTree = "<group>"; };
+		18A454DE1D7DE761003B1190 /* DayCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayCellView.swift; path = Views/DayCellView.swift; sourceTree = "<group>"; };
+		18A454E01D7E48D1003B1190 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = "View controllers/CalendarViewController.swift"; sourceTree = "<group>"; };
 		18F35DE11D76ACF1004E721B /* Cope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F35DE41D76ACF1004E721B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18F35DE61D76ACF1004E721B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		18F35DE81D76ACF1004E721B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		18F35DEB1D76ACF1004E721B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18F35DED1D76ACF1004E721B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18F35DF01D76ACF1004E721B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +66,15 @@
 		18F35E021D76ACF2004E721B /* CopeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CopeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F35E061D76ACF2004E721B /* CopeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopeUITests.swift; sourceTree = "<group>"; };
 		18F35E081D76ACF2004E721B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2070AAA8FFFA04D1E6C936C3 /* Pods-Cope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cope.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cope/Pods-Cope.debug.xcconfig"; sourceTree = "<group>"; };
+		34660174B92557A0552A7097 /* Pods-Cope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cope.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cope/Pods-Cope.release.xcconfig"; sourceTree = "<group>"; };
+		3869C8BC0C830F95DA6F4DCF /* Pods-CopeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CopeTests/Pods-CopeTests.release.xcconfig"; sourceTree = "<group>"; };
+		8C7659F6435C1037905CECA8 /* Pods-CopeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CopeTests/Pods-CopeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B1D850E431122ACC52C575ED /* Pods-CopeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CopeUITests/Pods-CopeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DAACAF9093B00459DE1EEE49 /* Pods-CopeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CopeUITests/Pods-CopeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F455E059B8FB39CB5B479090 /* Pods_Cope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8012DB6D187DE97AB973FEE /* Pods_CopeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CopeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F87C355E7D5DBC930251D164 /* Pods_CopeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CopeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FEB863F751C81E819D65BBC /* Pods_Cope.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BBF5BEB898350D2390957A2 /* Pods_CopeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C79F5844211AFC03E30EFCB /* Pods_CopeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +112,8 @@
 				18F35DFA1D76ACF2004E721B /* CopeTests */,
 				18F35E051D76ACF2004E721B /* CopeUITests */,
 				18F35DE21D76ACF1004E721B /* Products */,
+				1EB6EE73833732AD41479600 /* Pods */,
+				F565769C08642C2397B229F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +130,17 @@
 		18F35DE31D76ACF1004E721B /* Cope */ = {
 			isa = PBXGroup;
 			children = (
+				1860C2281D7EA73A005A636A /* AddMedicationFormViewController.swift */,
+				18A454DC1D7DE727003B1190 /* DayCellView.xib */,
+				18A454DE1D7DE761003B1190 /* DayCellView.swift */,
 				18F35DE41D76ACF1004E721B /* AppDelegate.swift */,
-				18F35DE61D76ACF1004E721B /* FirstViewController.swift */,
-				18F35DE81D76ACF1004E721B /* SecondViewController.swift */,
+				18A454D61D7DDB7F003B1190 /* SurveyHeaderReusableView.swift */,
 				18F35DEA1D76ACF1004E721B /* Main.storyboard */,
+				180761D91D7E721900EB197A /* SummaryChartCell.swift */,
+				18A454E01D7E48D1003B1190 /* CalendarViewController.swift */,
+				18A454D41D7DD970003B1190 /* SurveyOptionCell.swift */,
+				18A454D21D7DD1E6003B1190 /* SurveyViewController.swift */,
+				18A454D01D7DD189003B1190 /* SummaryCollectionViewController.swift */,
 				18F35DED1D76ACF1004E721B /* Assets.xcassets */,
 				18F35DEF1D76ACF1004E721B /* LaunchScreen.storyboard */,
 				18F35DF21D76ACF1004E721B /* Info.plist */,
@@ -128,6 +166,29 @@
 			path = CopeUITests;
 			sourceTree = "<group>";
 		};
+		1EB6EE73833732AD41479600 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2070AAA8FFFA04D1E6C936C3 /* Pods-Cope.debug.xcconfig */,
+				34660174B92557A0552A7097 /* Pods-Cope.release.xcconfig */,
+				8C7659F6435C1037905CECA8 /* Pods-CopeTests.debug.xcconfig */,
+				3869C8BC0C830F95DA6F4DCF /* Pods-CopeTests.release.xcconfig */,
+				B1D850E431122ACC52C575ED /* Pods-CopeUITests.debug.xcconfig */,
+				DAACAF9093B00459DE1EEE49 /* Pods-CopeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F565769C08642C2397B229F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F455E059B8FB39CB5B479090 /* Pods_Cope.framework */,
+				F87C355E7D5DBC930251D164 /* Pods_CopeTests.framework */,
+				F8012DB6D187DE97AB973FEE /* Pods_CopeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +196,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18F35E0B1D76ACF2004E721B /* Build configuration list for PBXNativeTarget "Cope" */;
 			buildPhases = (
+				6295EC22D6DBD1CAA808EF12 /* [CP] Check Pods Manifest.lock */,
 				18F35DDD1D76ACF1004E721B /* Sources */,
 				18F35DDE1D76ACF1004E721B /* Frameworks */,
 				18F35DDF1D76ACF1004E721B /* Resources */,
+				082C1942ECC63DFC1A8B38BB /* [CP] Embed Pods Frameworks */,
+				74EE9DCE41EA2076750CA8AA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18F35E0E1D76ACF2004E721B /* Build configuration list for PBXNativeTarget "CopeTests" */;
 			buildPhases = (
+				8B1F9834328DC95BF121D7A3 /* [CP] Check Pods Manifest.lock */,
 				18F35DF31D76ACF2004E721B /* Sources */,
 				18F35DF41D76ACF2004E721B /* Frameworks */,
 				18F35DF51D76ACF2004E721B /* Resources */,
+				A18B606013335803ED5EE642 /* [CP] Embed Pods Frameworks */,
+				4A0DBFAB0A08D99BAFC3A38B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +237,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18F35E111D76ACF2004E721B /* Build configuration list for PBXNativeTarget "CopeUITests" */;
 			buildPhases = (
+				184CC2DD78FEC328BBF6C799 /* [CP] Check Pods Manifest.lock */,
 				18F35DFE1D76ACF2004E721B /* Sources */,
 				18F35DFF1D76ACF2004E721B /* Frameworks */,
 				18F35E001D76ACF2004E721B /* Resources */,
+				355CDF4AB57A6CBC993ECBDD /* [CP] Copy Pods Resources */,
+				986E70DBAE587474D69D2380 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,18 +261,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Carlos Arcenas";
 				TargetAttributes = {
 					18F35DE01D76ACF1004E721B = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					18F35DF61D76ACF2004E721B = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 18F35DE01D76ACF1004E721B;
 					};
 					18F35E011D76ACF2004E721B = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 18F35DE01D76ACF1004E721B;
 					};
 				};
@@ -233,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F35DF11D76ACF1004E721B /* LaunchScreen.storyboard in Resources */,
+				18A454DD1D7DE727003B1190 /* DayCellView.xib in Resources */,
 				18F35DEE1D76ACF1004E721B /* Assets.xcassets in Resources */,
 				18F35DEC1D76ACF1004E721B /* Main.storyboard in Resources */,
 			);
@@ -254,14 +328,158 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		082C1942ECC63DFC1A8B38BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cope/Pods-Cope-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		184CC2DD78FEC328BBF6C799 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		355CDF4AB57A6CBC993ECBDD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CopeUITests/Pods-CopeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A0DBFAB0A08D99BAFC3A38B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CopeTests/Pods-CopeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6295EC22D6DBD1CAA808EF12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		74EE9DCE41EA2076750CA8AA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cope/Pods-Cope-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B1F9834328DC95BF121D7A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		986E70DBAE587474D69D2380 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CopeUITests/Pods-CopeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A18B606013335803ED5EE642 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CopeTests/Pods-CopeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		18F35DDD1D76ACF1004E721B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18F35DE91D76ACF1004E721B /* SecondViewController.swift in Sources */,
+				18A454D51D7DD970003B1190 /* SurveyOptionCell.swift in Sources */,
+				180761DA1D7E721900EB197A /* SummaryChartCell.swift in Sources */,
+				18A454D71D7DDB7F003B1190 /* SurveyHeaderReusableView.swift in Sources */,
+				18A454D11D7DD189003B1190 /* SummaryCollectionViewController.swift in Sources */,
 				18F35DE51D76ACF1004E721B /* AppDelegate.swift in Sources */,
-				18F35DE71D76ACF1004E721B /* FirstViewController.swift in Sources */,
+				18A454DF1D7DE761003B1190 /* DayCellView.swift in Sources */,
+				18A454E11D7E48D1003B1190 /* CalendarViewController.swift in Sources */,
+				1860C2291D7EA73A005A636A /* AddMedicationFormViewController.swift in Sources */,
+				18A454D31D7DD1E6003B1190 /* SurveyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,8 +548,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -375,8 +595,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -395,74 +617,89 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		18F35E0C1D76ACF2004E721B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2070AAA8FFFA04D1E6C936C3 /* Pods-Cope.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Cope/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carlosarcenas.Cope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		18F35E0D1D76ACF2004E721B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34660174B92557A0552A7097 /* Pods-Cope.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Cope/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carlosarcenas.Cope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		18F35E0F1D76ACF2004E721B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C7659F6435C1037905CECA8 /* Pods-CopeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CopeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carlosarcenas.CopeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cope.app/Cope";
 			};
 			name = Debug;
 		};
 		18F35E101D76ACF2004E721B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3869C8BC0C830F95DA6F4DCF /* Pods-CopeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CopeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carlosarcenas.CopeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cope.app/Cope";
 			};
 			name = Release;
 		};
 		18F35E121D76ACF2004E721B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1D850E431122ACC52C575ED /* Pods-CopeUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = CopeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carlosarcenas.CopeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Cope;
 			};
 			name = Debug;
 		};
 		18F35E131D76ACF2004E721B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAACAF9093B00459DE1EEE49 /* Pods-CopeUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = CopeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carlosarcenas.CopeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Cope;
 			};
 			name = Release;
@@ -486,6 +723,7 @@
 				18F35E0D1D76ACF2004E721B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18F35E0E1D76ACF2004E721B /* Build configuration list for PBXNativeTarget "CopeTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +732,7 @@
 				18F35E101D76ACF2004E721B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18F35E111D76ACF2004E721B /* Build configuration list for PBXNativeTarget "CopeUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +741,7 @@
 				18F35E131D76ACF2004E721B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
