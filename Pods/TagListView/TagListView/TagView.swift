@@ -82,7 +82,7 @@ open class TagView: UIButton {
         }
     }
     
-    private func reloadStyles() {
+    fileprivate func reloadStyles() {
         if isHighlighted {
             if let highlightedBackgroundColor = highlightedBackgroundColor {
                 // For highlighted, if it's nil, we should not fallback to backgroundColor.
@@ -162,7 +162,7 @@ open class TagView: UIButton {
         setupView()
     }
     
-    private func setupView() {
+    fileprivate func setupView() {
         frame.size = intrinsicContentSize
         addSubview(removeButton)
         removeButton.tagView = self
@@ -188,7 +188,7 @@ open class TagView: UIButton {
         return size
     }
     
-    private func updateRightInsets() {
+    fileprivate func updateRightInsets() {
         if enableRemoveButton {
             titleEdgeInsets.right = paddingX  + removeButtonIconSize + paddingX
         }

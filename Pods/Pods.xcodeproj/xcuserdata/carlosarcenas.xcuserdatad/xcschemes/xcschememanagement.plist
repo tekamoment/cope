@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ChameleonFramework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Charts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,11 +52,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0297727F64B2FD9A142EBD59CA5FC79E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>2E2ED75B03CF4A2D0719664A48C0B27E</key>
 		<dict>
 			<key>primary</key>
@@ -62,17 +62,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5172ACAB7FEA22813859DC97CA0AA16F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>59C5734CBDBC16DD52556632EF13C40B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>68607EE11F32E8242F9B168F8C2E2BDB</key>
+		<key>6C2323A8557F9865C5276370C3759F83</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C2323A8557F9865C5276370C3759F83</key>
+		<key>B6AAD828EC7970BBBA696B107E3205EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -83,6 +88,11 @@
 			<true/>
 		</dict>
 		<key>C735C86ECE4896A3F62B4333AA5F603E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA7BEE345F1E5DD96F3AF0845E8AD24D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
