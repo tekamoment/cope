@@ -1,15 +1,51 @@
 PODS:
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - Charts (2.2.5):
     - Charts/Core (= 2.2.5)
   - Charts/Core (2.2.5)
   - Eureka (1.7.0)
+  - Firebase/Analytics (3.6.0):
+    - FirebaseAnalytics (= 3.4.2)
+  - Firebase/Auth (3.6.0):
+    - Firebase/Analytics
+    - FirebaseAuth (= 3.0.5)
+  - Firebase/Core (3.6.0):
+    - Firebase/Analytics
+  - Firebase/Database (3.6.0):
+    - Firebase/Analytics
+    - FirebaseDatabase (= 3.0.3)
+  - FirebaseAnalytics (3.4.2):
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+    - GoogleUtilities (~> 1.2)
+  - FirebaseAuth (3.0.5):
+    - FirebaseAnalytics (~> 3.3)
+    - GoogleNetworkingUtilities (~> 1.2)
+    - GoogleUtilities (~> 1.2)
+  - FirebaseDatabase (3.0.3):
+    - FirebaseAnalytics (~> 3.3)
+  - FirebaseInstanceID (1.0.8)
+  - GoogleInterchangeUtilities (1.2.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleNetworkingUtilities (1.2.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleSymbolUtilities (1.1.1)
+  - GoogleUtilities (1.3.1):
+    - GoogleSymbolUtilities (~> 1.0)
   - JTAppleCalendar (5.0.1)
   - KCFloatingActionButton (2.0.1)
   - TagListView (1.0.0)
 
 DEPENDENCIES:
+  - ChameleonFramework/Swift
   - Charts (from `https://github.com/danielgindi/Charts.git`, branch `Swift-3.0`)
   - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `Swift3`)
+  - Firebase/Auth
+  - Firebase/Core
+  - Firebase/Database
   - JTAppleCalendar (from `https://github.com/patchthecode/JTAppleCalendar.git`, branch `Swift3`)
   - KCFloatingActionButton (from `https://github.com/kciter/KCFloatingActionButton.git`)
   - TagListView (from `https://github.com/xhacker/TagListView.git`, branch `master`)
@@ -48,12 +84,22 @@ CHECKOUT OPTIONS:
     :git: https://github.com/xhacker/TagListView.git
 
 SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
   Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
+  Firebase: 34187200ef4979dbd485c7aa685ef078bf587c86
+  FirebaseAnalytics: 3f5358d9104adf159cc8d99b7b501e50099a39ad
+  FirebaseAuth: 75a062bbf2d3c97d1e6e55bbc110e13a6853e25d
+  FirebaseDatabase: 750a4a0fe18ef114318876fd654b2d9c671e0992
+  FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
+  GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
+  GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
+  GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
+  GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   JTAppleCalendar: cb2417b1f3367d1993e31720a663646742139a5c
   KCFloatingActionButton: 6374d1072fedfb45606ff3bc07d3e1c3f1e1ddcc
   TagListView: 6bf4bded034c4c90b1e90d8cd3d8e1d852dba0a8
 
-PODFILE CHECKSUM: d498379796db90d48a7b8e3ee5f27bdb43246d9e
+PODFILE CHECKSUM: bd5bb71369383b84eccbc01c1c9844c909880b84
 
 COCOAPODS: 1.1.0.rc.2

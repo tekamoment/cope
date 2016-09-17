@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18011F9E1D8C5A33002D3B7C /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18011F9D1D8C5A33002D3B7C /* Medication.swift */; };
+		18011FA01D8C5BBA002D3B7C /* SymptomQuestionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18011F9F1D8C5BBA002D3B7C /* SymptomQuestionnaire.swift */; };
+		18011FA21D8C5E0F002D3B7C /* Wellness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18011FA11D8C5E0F002D3B7C /* Wellness.swift */; };
 		180761DA1D7E721900EB197A /* SummaryChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180761D91D7E721900EB197A /* SummaryChartCell.swift */; };
 		1860C2291D7EA73A005A636A /* AddMedicationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860C2281D7EA73A005A636A /* AddMedicationFormViewController.swift */; };
 		18A454D11D7DD189003B1190 /* SummaryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A454D01D7DD189003B1190 /* SummaryCollectionViewController.swift */; };
@@ -45,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18011F9D1D8C5A33002D3B7C /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Medication.swift; path = Models/Medication.swift; sourceTree = "<group>"; };
+		18011F9F1D8C5BBA002D3B7C /* SymptomQuestionnaire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SymptomQuestionnaire.swift; path = Models/SymptomQuestionnaire.swift; sourceTree = "<group>"; };
+		18011FA11D8C5E0F002D3B7C /* Wellness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Wellness.swift; path = Models/Wellness.swift; sourceTree = "<group>"; };
 		180761D91D7E721900EB197A /* SummaryChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryChartCell.swift; path = Views/SummaryChartCell.swift; sourceTree = "<group>"; };
 		1860C2281D7EA73A005A636A /* AddMedicationFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMedicationFormViewController.swift; path = "View controllers/AddMedicationFormViewController.swift"; sourceTree = "<group>"; };
 		18A454D01D7DD189003B1190 /* SummaryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryCollectionViewController.swift; path = "View controllers/SummaryCollectionViewController.swift"; sourceTree = "<group>"; };
@@ -136,6 +142,9 @@
 				18F35DE41D76ACF1004E721B /* AppDelegate.swift */,
 				18A454D61D7DDB7F003B1190 /* SurveyHeaderReusableView.swift */,
 				18F35DEA1D76ACF1004E721B /* Main.storyboard */,
+				18011F9D1D8C5A33002D3B7C /* Medication.swift */,
+				18011F9F1D8C5BBA002D3B7C /* SymptomQuestionnaire.swift */,
+				18011FA11D8C5E0F002D3B7C /* Wellness.swift */,
 				180761D91D7E721900EB197A /* SummaryChartCell.swift */,
 				18A454E01D7E48D1003B1190 /* CalendarViewController.swift */,
 				18A454D41D7DD970003B1190 /* SurveyOptionCell.swift */,
@@ -266,6 +275,7 @@
 				TargetAttributes = {
 					18F35DE01D76ACF1004E721B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = AKTPE3FTGW;
 						LastSwiftMigration = 0800;
 					};
 					18F35DF61D76ACF2004E721B = {
@@ -471,10 +481,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18011F9E1D8C5A33002D3B7C /* Medication.swift in Sources */,
 				18A454D51D7DD970003B1190 /* SurveyOptionCell.swift in Sources */,
 				180761DA1D7E721900EB197A /* SummaryChartCell.swift in Sources */,
 				18A454D71D7DDB7F003B1190 /* SurveyHeaderReusableView.swift in Sources */,
 				18A454D11D7DD189003B1190 /* SummaryCollectionViewController.swift in Sources */,
+				18011FA01D8C5BBA002D3B7C /* SymptomQuestionnaire.swift in Sources */,
+				18011FA21D8C5E0F002D3B7C /* Wellness.swift in Sources */,
 				18F35DE51D76ACF1004E721B /* AppDelegate.swift in Sources */,
 				18A454DF1D7DE761003B1190 /* DayCellView.swift in Sources */,
 				18A454E11D7E48D1003B1190 /* CalendarViewController.swift in Sources */,
@@ -628,6 +641,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AKTPE3FTGW;
 				INFOPLIST_FILE = Cope/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carlosarcenas.Cope;
@@ -642,6 +656,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AKTPE3FTGW;
 				INFOPLIST_FILE = Cope/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.carlosarcenas.Cope;
