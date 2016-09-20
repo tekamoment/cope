@@ -19,6 +19,8 @@
 		18A454DD1D7DE727003B1190 /* DayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A454DC1D7DE727003B1190 /* DayCellView.xib */; };
 		18A454DF1D7DE761003B1190 /* DayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A454DE1D7DE761003B1190 /* DayCellView.swift */; };
 		18A454E11D7E48D1003B1190 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A454E01D7E48D1003B1190 /* CalendarViewController.swift */; };
+		18EC78BB1D90EF0B004C0F0F /* Questions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18EC78BA1D90EF0B004C0F0F /* Questions.plist */; };
+		18EC78C21D90F58F004C0F0F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18EC78C01D90F58F004C0F0F /* Localizable.strings */; };
 		18F35DE51D76ACF1004E721B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F35DE41D76ACF1004E721B /* AppDelegate.swift */; };
 		18F35DEC1D76ACF1004E721B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F35DEA1D76ACF1004E721B /* Main.storyboard */; };
 		18F35DEE1D76ACF1004E721B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F35DED1D76ACF1004E721B /* Assets.xcassets */; };
@@ -60,6 +62,9 @@
 		18A454DC1D7DE727003B1190 /* DayCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DayCellView.xib; path = Views/DayCellView.xib; sourceTree = "<group>"; };
 		18A454DE1D7DE761003B1190 /* DayCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayCellView.swift; path = Views/DayCellView.swift; sourceTree = "<group>"; };
 		18A454E01D7E48D1003B1190 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = "View controllers/CalendarViewController.swift"; sourceTree = "<group>"; };
+		18EC78BA1D90EF0B004C0F0F /* Questions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Questions.plist; path = "Additional information/Questions.plist"; sourceTree = "<group>"; };
+		18EC78BF1D90F559004C0F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		18EC78C11D90F58F004C0F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Cope/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18F35DE11D76ACF1004E721B /* Cope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F35DE41D76ACF1004E721B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F35DEB1D76ACF1004E721B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,9 +116,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1838B04B1D8D841B00FB2E36 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				18011F9D1D8C5A33002D3B7C /* Medication.swift */,
+				18011F9F1D8C5BBA002D3B7C /* SymptomQuestionnaire.swift */,
+				18011FA11D8C5E0F002D3B7C /* Wellness.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1838B04C1D8D842800FB2E36 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18A454DC1D7DE727003B1190 /* DayCellView.xib */,
+				18A454DE1D7DE761003B1190 /* DayCellView.swift */,
+				18A454D61D7DDB7F003B1190 /* SurveyHeaderReusableView.swift */,
+				180761D91D7E721900EB197A /* SummaryChartCell.swift */,
+				18A454D41D7DD970003B1190 /* SurveyOptionCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		1838B04D1D8D843300FB2E36 /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1860C2281D7EA73A005A636A /* AddMedicationFormViewController.swift */,
+				18A454E01D7E48D1003B1190 /* CalendarViewController.swift */,
+				18A454D21D7DD1E6003B1190 /* SurveyViewController.swift */,
+				18A454D01D7DD189003B1190 /* SummaryCollectionViewController.swift */,
+			);
+			name = "View controllers";
+			sourceTree = "<group>";
+		};
 		18F35DD81D76ACF1004E721B = {
 			isa = PBXGroup;
 			children = (
+				18EC78C01D90F58F004C0F0F /* Localizable.strings */,
 				18F35DE31D76ACF1004E721B /* Cope */,
 				18F35DFA1D76ACF2004E721B /* CopeTests */,
 				18F35E051D76ACF2004E721B /* CopeUITests */,
@@ -136,23 +175,15 @@
 		18F35DE31D76ACF1004E721B /* Cope */ = {
 			isa = PBXGroup;
 			children = (
-				1860C2281D7EA73A005A636A /* AddMedicationFormViewController.swift */,
-				18A454DC1D7DE727003B1190 /* DayCellView.xib */,
-				18A454DE1D7DE761003B1190 /* DayCellView.swift */,
+				1838B04D1D8D843300FB2E36 /* View controllers */,
+				1838B04C1D8D842800FB2E36 /* Views */,
 				18F35DE41D76ACF1004E721B /* AppDelegate.swift */,
-				18A454D61D7DDB7F003B1190 /* SurveyHeaderReusableView.swift */,
 				18F35DEA1D76ACF1004E721B /* Main.storyboard */,
-				18011F9D1D8C5A33002D3B7C /* Medication.swift */,
-				18011F9F1D8C5BBA002D3B7C /* SymptomQuestionnaire.swift */,
-				18011FA11D8C5E0F002D3B7C /* Wellness.swift */,
-				180761D91D7E721900EB197A /* SummaryChartCell.swift */,
-				18A454E01D7E48D1003B1190 /* CalendarViewController.swift */,
-				18A454D41D7DD970003B1190 /* SurveyOptionCell.swift */,
-				18A454D21D7DD1E6003B1190 /* SurveyViewController.swift */,
-				18A454D01D7DD189003B1190 /* SummaryCollectionViewController.swift */,
+				1838B04B1D8D841B00FB2E36 /* Models */,
 				18F35DED1D76ACF1004E721B /* Assets.xcassets */,
 				18F35DEF1D76ACF1004E721B /* LaunchScreen.storyboard */,
 				18F35DF21D76ACF1004E721B /* Info.plist */,
+				18EC78BA1D90EF0B004C0F0F /* Questions.plist */,
 			);
 			path = Cope;
 			sourceTree = "<group>";
@@ -316,8 +347,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F35DF11D76ACF1004E721B /* LaunchScreen.storyboard in Resources */,
+				18EC78C21D90F58F004C0F0F /* Localizable.strings in Resources */,
 				18A454DD1D7DE727003B1190 /* DayCellView.xib in Resources */,
 				18F35DEE1D76ACF1004E721B /* Assets.xcassets in Resources */,
+				18EC78BB1D90EF0B004C0F0F /* Questions.plist in Resources */,
 				18F35DEC1D76ACF1004E721B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,10 +561,19 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		18EC78C01D90F58F004C0F0F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18EC78C11D90F58F004C0F0F /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		18F35DEA1D76ACF1004E721B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				18F35DEB1D76ACF1004E721B /* Base */,
+				18EC78BF1D90F559004C0F0F /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

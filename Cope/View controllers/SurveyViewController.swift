@@ -67,6 +67,11 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
         cell.titleLabel.text = surveyQuestion!.choices[(indexPath as NSIndexPath).item].0
         // Configure the cell
     
+        cell.layer.masksToBounds = false
+        cell.layer.shadowOpacity = 0.15
+        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowOffset = CGSize(width: 0, height: 3)
+        
         return cell
     }
     

@@ -8,6 +8,8 @@
 
 import UIKit
 
+import ChameleonFramework
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UINavigationBar.appearance().isOpaque = true
+        UINavigationBar.appearance().barTintColor = UIColor(hexString: "F38A8A")
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        
+        UITabBar.appearance().isOpaque = true
+        UITabBar.appearance().tintColor = UIColor(hexString: "F38A8A")
         return true
     }
 

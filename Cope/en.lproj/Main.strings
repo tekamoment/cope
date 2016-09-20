@@ -1,0 +1,72 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6gw-an-nZm"; */
+"6gw-an-nZm.text" = "Label";
+
+/* Class = "UILabel"; text = "WED"; ObjectID = "8I4-qx-1AY"; */
+"8I4-qx-1AY.text" = "WED";
+
+/* Class = "UITabBarItem"; title = "Medication"; ObjectID = "8yD-gx-Cfu"; */
+"8yD-gx-Cfu.title" = "Medication";
+
+/* Class = "UITabBarItem"; title = "Calendar"; ObjectID = "9fk-T8-PVP"; */
+"9fk-T8-PVP.title" = "Calendar";
+
+/* Class = "UILabel"; text = "September 2016"; ObjectID = "BiH-4D-KbG"; */
+"BiH-4D-KbG.text" = "September 2016";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BuI-7I-ajb"; */
+"BuI-7I-ajb.text" = "Label";
+
+/* Class = "UILabel"; text = "Your wellness score"; ObjectID = "Dje-9q-DZn"; */
+"Dje-9q-DZn.text" = "Your wellness score";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Jzk-gs-Gei"; */
+"Jzk-gs-Gei.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Summary"; ObjectID = "NYS-Z1-Ooc"; */
+"NYS-Z1-Ooc.title" = "Summary";
+
+/* Class = "UILabel"; text = "THU"; ObjectID = "NbQ-zg-hzD"; */
+"NbQ-zg-hzD.text" = "THU";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NhA-gm-iWw"; */
+"NhA-gm-iWw.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PsY-yw-pkV"; */
+"PsY-yw-pkV.text" = "Label";
+
+/* Class = "UILabel"; text = "SUN"; ObjectID = "Pug-fm-rFa"; */
+"Pug-fm-rFa.text" = "SUN";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TYT-Vy-Oq4"; */
+"TYT-Vy-Oq4.text" = "Label";
+
+/* Class = "UILabel"; text = "SAT"; ObjectID = "UZ9-LJ-A5X"; */
+"UZ9-LJ-A5X.text" = "SAT";
+
+/* Class = "UILabel"; text = "FRI"; ObjectID = "eM9-n2-gtH"; */
+"eM9-n2-gtH.text" = "FRI";
+
+/* Class = "UILabel"; text = "TUE"; ObjectID = "mcv-RI-0bD"; */
+"mcv-RI-0bD.text" = "TUE";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mhn-F2-5zI"; */
+"mhn-F2-5zI.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "oG2-h4-E9i"; */
+"oG2-h4-E9i.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "pdM-xv-m75"; */
+"pdM-xv-m75.text" = "Label";
+
+/* Class = "UILabel"; text = "MON"; ObjectID = "r24-no-Lrs"; */
+"r24-no-Lrs.text" = "MON";
+
+/* Class = "UITabBarItem"; title = "Symptoms"; ObjectID = "sYQ-WC-C7C"; */
+"sYQ-WC-C7C.title" = "Symptoms";
+
+/* Class = "UIButton"; normalTitle = ">"; ObjectID = "t9C-2B-0Ui"; */
+"t9C-2B-0Ui.normalTitle" = ">";
+
+/* Class = "UIButton"; normalTitle = "<"; ObjectID = "xeB-wr-s4X"; */
+"xeB-wr-s4X.normalTitle" = "<";

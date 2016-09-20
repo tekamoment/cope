@@ -1,0 +1,97 @@
+/* 
+  Localizable.strings
+  Cope
+
+  Created by Carlos Arcenas on 9/20/16.
+  Copyright © 2016 Carlos Arcenas. All rights reserved.
+*/
+
+/* Sleep */
+
+sleepCategory = "Your Quality of Sleep";
+sleepQuestionTitle = "How long did you sleep last night?";
+
+zeroToFourHours = "0-4 hours";
+fourToSixHours = "4-6 hours";
+sixToNineHours = "6-9 hours";
+nineOrMoreHours = "9 or more hours";
+
+/* Emotion */
+
+emotionCategory = "Your Emotions";
+emotionQuestionTitle = "How do you feel today so far?";
+
+happy = "Happy";
+fearful = "Fearful";
+sad = "Sad";
+depressed = "Depressed";
+
+/* Energy */
+
+energyCategory = "Your Energy Level";
+energyQuestionTitle = "How's your energy level right now?";
+
+energized = "Energized";
+restless = "Restless";
+sluggish = "Sluggish";
+exhausted = "Exhausted";
+
+/* Focus */
+focusCategory = "Your Focus";
+focusQuestionTitle = "How focused are you?";
+
+focused = "Focused";
+anxious = "Anxious";
+distracted = "Distracted";
+indecisive = "Indecisive";
+
+/* Motivation */
+
+motivationCategory = "Your Motivation";
+motivationQuestionTitle = "How are you motivated by work?";
+
+motivated = "Motivated";
+engaged = "Engaged";
+unmotivated = "Unmotivated";
+withdrawn = "Withdrawn";
+
+/* Sleep */
+
+appetiteCategory = "Your Appetite";
+appetiteQuestionTitle = "How's your meal intake?";
+
+noMeals = "No meals";
+oneToTwoMeals = "1-2 meals";
+threeToFourMeals = "3-4 meals";
+fiveOrMoreMeals = "5 or more meals";
+
+/* Self-esteem */
+
+sleepCategory = "Your Self-esteem";
+sleepQuestionTitle = "How do you feel about yourself?";
+
+confident = "Confident";
+normal = "Normal";
+low = "Low";
+selfLoathing = "Self-loathing";
+
+/* Sleep */
+
+thoughtsCategory = "Your Thoughts";
+thoughtsQuestionTitle = "How are your thoughts?";
+
+optimistic = "Optimistic";
+paranoid = "Paranoid";
+pessimistic = "Pessimistic";
+suicidal = "Suicidal";
+
+
+
+
+
+
+
+
+
+
+

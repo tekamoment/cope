@@ -12,6 +12,12 @@ import JTAppleCalendar
 class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
 
     @IBOutlet weak var calendarView: JTAppleCalendarView!
+    
+    @IBOutlet weak var monthYearLabel: UILabel!
+    @IBOutlet weak var wellnessScoreLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var reccommendationLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         calendarView.dataSource = self
@@ -21,8 +27,12 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         calendarView.scrollEnabled = false
         
         calendarView.cellInset = CGPoint(x: 0.5, y: 0.5)
+        
+        self.tabBarController!.title = "Calendar"
         // Do any additional setup after loading the view.
+        
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,7 +62,6 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
     func calendar(_ calendar: JTAppleCalendarView, isAboutToDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
         (cell as! DayCellView).setupCellBeforeDisplay(cellState, date: date)
     }
-    
 
     /*
     // MARK: - Navigation
