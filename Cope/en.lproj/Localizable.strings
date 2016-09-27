@@ -6,10 +6,18 @@
   Copyright © 2016 Carlos Arcenas. All rights reserved.
 */
 
+
+/* UI Components */
+calendar = "Calendar";
+symptoms = "Symptoms";
+medication = "Medication";
+
+
 /* Sleep */
 
-sleepCategory = "Your Quality of Sleep";
-sleepQuestionTitle = "How long did you sleep last night?";
+sleepCategory = "Sleep";
+sleepQuestionTitle = "Your Quality of Sleep";
+sleepQuestionSubtitle = "How long did you sleep last night?";
 
 zeroToFourHours = "0-4 hours";
 fourToSixHours = "4-6 hours";
@@ -18,8 +26,9 @@ nineOrMoreHours = "9 or more hours";
 
 /* Emotion */
 
-emotionCategory = "Your Emotions";
-emotionQuestionTitle = "How do you feel today so far?";
+emotionCategory = "Emotion";
+emotionQuestionTitle = "Your Emotions";
+emotionQuestionSubtitle = "How do you feel today so far?";
 
 happy = "Happy";
 fearful = "Fearful";
@@ -28,8 +37,9 @@ depressed = "Depressed";
 
 /* Energy */
 
-energyCategory = "Your Energy Level";
-energyQuestionTitle = "How's your energy level right now?";
+energyCategory = "Energy";
+energyQuestionTitle = "Your Energy Level";
+energyQuestionSubtitle = "How's your energy level right now?";
 
 energized = "Energized";
 restless = "Restless";
@@ -37,8 +47,9 @@ sluggish = "Sluggish";
 exhausted = "Exhausted";
 
 /* Focus */
-focusCategory = "Your Focus";
-focusQuestionTitle = "How focused are you?";
+focusCategory = "Focus";
+focusQuestionTitle = "Your Focus";
+focusQuestionSubtitle = "How focused are you?";
 
 focused = "Focused";
 anxious = "Anxious";
@@ -47,8 +58,9 @@ indecisive = "Indecisive";
 
 /* Motivation */
 
-motivationCategory = "Your Motivation";
-motivationQuestionTitle = "How are you motivated by work?";
+motivationCategory = "Motivation";
+motivationQuestionTitle = "Your Motivation";
+motivationQuestionSubtitle = "How are you motivated by work?";
 
 motivated = "Motivated";
 engaged = "Engaged";
@@ -57,8 +69,9 @@ withdrawn = "Withdrawn";
 
 /* Sleep */
 
-appetiteCategory = "Your Appetite";
-appetiteQuestionTitle = "How's your meal intake?";
+appetiteCategory = "Appetite";
+appetiteQuestionTitle = "Your Appetite";
+appetiteQuestionSubtitle = "How's your meal intake?";
 
 noMeals = "No meals";
 oneToTwoMeals = "1-2 meals";
@@ -67,8 +80,9 @@ fiveOrMoreMeals = "5 or more meals";
 
 /* Self-esteem */
 
-sleepCategory = "Your Self-esteem";
-sleepQuestionTitle = "How do you feel about yourself?";
+selfEsteemCategory = "Self-esteem";
+selfEsteemQuestionTitle = "Your Self-esteem";
+selfEsteemQuestionSubtitle = "How do you feel about yourself?";
 
 confident = "Confident";
 normal = "Normal";
@@ -77,8 +91,9 @@ selfLoathing = "Self-loathing";
 
 /* Sleep */
 
-thoughtsCategory = "Your Thoughts";
-thoughtsQuestionTitle = "How are your thoughts?";
+thoughtsCategory = "Thoughts";
+thoughtsQuestionTitle = "Your Thoughts";
+thoughtsQuestionSubtitle = "How are your thoughts?";
 
 optimistic = "Optimistic";
 paranoid = "Paranoid";

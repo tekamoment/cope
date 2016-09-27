@@ -7,6 +7,8 @@
 		<string>sleepCategory</string>
 		<key>questionTitle</key>
 		<string>sleepQuestionTitle</string>
+		<key>questionSubtitle</key>
+		<string>sleepQuestionSubtitle</string>
 		<key>questionIcon</key>
 		<string>sleep</string>
 		<key>questionChoices</key>
@@ -42,6 +44,8 @@
 		<string>emotionCategory</string>
 		<key>questionTitle</key>
 		<string>emotionQuestionTitle</string>
+		<key>questionSubtitle</key>
+		<string>emotionQuestionSubtitle</string>
 		<key>questionIcon</key>
 		<string>emotion</string>
 		<key>questionChoices</key>
@@ -77,6 +81,8 @@
 		<string>energyCategory</string>
 		<key>questionTitle</key>
 		<string>energyQuestionTitle</string>
+		<key>questionSubtitle</key>
+		<string>energyQuestionSubtitle</string>
 		<key>questionIcon</key>
 		<string>energy</string>
 		<key>questionChoices</key>
@@ -112,6 +118,8 @@
 		<string>focusCategory</string>
 		<key>questionTitle</key>
 		<string>focusQuestionTitle</string>
+		<key>questionSubtitle</key>
+		<string>focusQuestionSubtitle</string>
 		<key>questionIcon</key>
 		<string>focus</string>
 		<key>questionChoices</key>
@@ -147,6 +155,8 @@
 		<string>motivationCategory</string>
 		<key>questionTitle</key>
 		<string>motivationQuestionTitle</string>
+		<key>questionSubtitle</key>
+		<string>motivationQuestionSubtitle</string>
 		<key>questionIcon</key>
 		<string>motivation</string>
 		<key>questionChoices</key>
@@ -182,6 +192,8 @@
 		<string>appetiteCategory</string>
 		<key>questionTitle</key>
 		<string>appetiteQuestionTitle</string>
+		<key>questionSubtitle</key>
+		<string>appetiteQuestionSubtitle</string>
 		<key>questionIcon</key>
 		<string>appetite</string>
 		<key>questionChoices</key>
@@ -217,6 +229,8 @@
 		<string>selfEsteemCategory</string>
 		<key>questionTitle</key>
 		<string>selfEsteemQuestionTitle</string>
+		<key>questionSubtitle</key>
+		<string>selfEsteemQuestionSubtitle</string>
 		<key>questionIcon</key>
 		<string>self-esteem</string>
 		<key>questionChoices</key>
@@ -252,6 +266,8 @@
 		<string>thoughtsCategory</string>
 		<key>questionTitle</key>
 		<string>thoughtsQuestionTitle</string>
+		<key>questionSubtitle</key>
+		<string>thoughtsQuestionSubtitle</string>
 		<key>questionIcon</key>
 		<string>thoughts</string>
 		<key>questionChoices</key>
