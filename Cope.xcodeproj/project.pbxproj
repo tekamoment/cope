@@ -11,6 +11,11 @@
 		18011FA01D8C5BBA002D3B7C /* SymptomQuestionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18011F9F1D8C5BBA002D3B7C /* SymptomQuestionnaire.swift */; };
 		18011FA21D8C5E0F002D3B7C /* Wellness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18011FA11D8C5E0F002D3B7C /* Wellness.swift */; };
 		180761DA1D7E721900EB197A /* SummaryChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180761D91D7E721900EB197A /* SummaryChartCell.swift */; };
+		182B4E051D9A9BA800EBCFEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 182B4E041D9A9BA800EBCFEE /* GoogleService-Info.plist */; };
+		182B4E061D9A9BA800EBCFEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 182B4E041D9A9BA800EBCFEE /* GoogleService-Info.plist */; };
+		182B4E071D9A9BA800EBCFEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 182B4E041D9A9BA800EBCFEE /* GoogleService-Info.plist */; };
+		182B4E0A1D9ADDE200EBCFEE /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182B4E081D9ADDE200EBCFEE /* LoginScreen.storyboard */; };
+		182B4E0C1D9ADDF500EBCFEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B4E0B1D9ADDF500EBCFEE /* LoginViewController.swift */; };
 		1860C2291D7EA73A005A636A /* AddMedicationFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860C2281D7EA73A005A636A /* AddMedicationFormViewController.swift */; };
 		18A454D11D7DD189003B1190 /* SummaryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A454D01D7DD189003B1190 /* SummaryCollectionViewController.swift */; };
 		18A454D31D7DD1E6003B1190 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A454D21D7DD1E6003B1190 /* SurveyViewController.swift */; };
@@ -21,6 +26,7 @@
 		18A454E11D7E48D1003B1190 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A454E01D7E48D1003B1190 /* CalendarViewController.swift */; };
 		18EC78BB1D90EF0B004C0F0F /* Questions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18EC78BA1D90EF0B004C0F0F /* Questions.plist */; };
 		18EC78C21D90F58F004C0F0F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18EC78C01D90F58F004C0F0F /* Localizable.strings */; };
+		18EC78C41D91148F004C0F0F /* SymptomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EC78C31D91148F004C0F0F /* SymptomsViewController.swift */; };
 		18F35DE51D76ACF1004E721B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F35DE41D76ACF1004E721B /* AppDelegate.swift */; };
 		18F35DEC1D76ACF1004E721B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F35DEA1D76ACF1004E721B /* Main.storyboard */; };
 		18F35DEE1D76ACF1004E721B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F35DED1D76ACF1004E721B /* Assets.xcassets */; };
@@ -54,6 +60,9 @@
 		18011F9F1D8C5BBA002D3B7C /* SymptomQuestionnaire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SymptomQuestionnaire.swift; path = Models/SymptomQuestionnaire.swift; sourceTree = "<group>"; };
 		18011FA11D8C5E0F002D3B7C /* Wellness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Wellness.swift; path = Models/Wellness.swift; sourceTree = "<group>"; };
 		180761D91D7E721900EB197A /* SummaryChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryChartCell.swift; path = Views/SummaryChartCell.swift; sourceTree = "<group>"; };
+		182B4E041D9A9BA800EBCFEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		182B4E091D9ADDE200EBCFEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginScreen.storyboard; sourceTree = "<group>"; };
+		182B4E0B1D9ADDF500EBCFEE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View controllers/LoginViewController.swift"; sourceTree = "<group>"; };
 		1860C2281D7EA73A005A636A /* AddMedicationFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMedicationFormViewController.swift; path = "View controllers/AddMedicationFormViewController.swift"; sourceTree = "<group>"; };
 		18A454D01D7DD189003B1190 /* SummaryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryCollectionViewController.swift; path = "View controllers/SummaryCollectionViewController.swift"; sourceTree = "<group>"; };
 		18A454D21D7DD1E6003B1190 /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyViewController.swift; path = "View controllers/SurveyViewController.swift"; sourceTree = "<group>"; };
@@ -65,6 +74,7 @@
 		18EC78BA1D90EF0B004C0F0F /* Questions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Questions.plist; path = "Additional information/Questions.plist"; sourceTree = "<group>"; };
 		18EC78BF1D90F559004C0F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		18EC78C11D90F58F004C0F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Cope/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		18EC78C31D91148F004C0F0F /* SymptomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SymptomsViewController.swift; path = "View controllers/SymptomsViewController.swift"; sourceTree = "<group>"; };
 		18F35DE11D76ACF1004E721B /* Cope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F35DE41D76ACF1004E721B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F35DEB1D76ACF1004E721B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,6 +151,7 @@
 		1838B04D1D8D843300FB2E36 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
+				18EC78C31D91148F004C0F0F /* SymptomsViewController.swift */,
 				1860C2281D7EA73A005A636A /* AddMedicationFormViewController.swift */,
 				18A454E01D7E48D1003B1190 /* CalendarViewController.swift */,
 				18A454D21D7DD1E6003B1190 /* SurveyViewController.swift */,
@@ -175,10 +186,13 @@
 		18F35DE31D76ACF1004E721B /* Cope */ = {
 			isa = PBXGroup;
 			children = (
+				182B4E041D9A9BA800EBCFEE /* GoogleService-Info.plist */,
+				18F35DE41D76ACF1004E721B /* AppDelegate.swift */,
 				1838B04D1D8D843300FB2E36 /* View controllers */,
 				1838B04C1D8D842800FB2E36 /* Views */,
-				18F35DE41D76ACF1004E721B /* AppDelegate.swift */,
 				18F35DEA1D76ACF1004E721B /* Main.storyboard */,
+				182B4E081D9ADDE200EBCFEE /* LoginScreen.storyboard */,
+				182B4E0B1D9ADDF500EBCFEE /* LoginViewController.swift */,
 				1838B04B1D8D841B00FB2E36 /* Models */,
 				18F35DED1D76ACF1004E721B /* Assets.xcassets */,
 				18F35DEF1D76ACF1004E721B /* LaunchScreen.storyboard */,
@@ -242,6 +256,7 @@
 				18F35DDF1D76ACF1004E721B /* Resources */,
 				082C1942ECC63DFC1A8B38BB /* [CP] Embed Pods Frameworks */,
 				74EE9DCE41EA2076750CA8AA /* [CP] Copy Pods Resources */,
+				182B4E0D1D9AE51B00EBCFEE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -350,7 +365,9 @@
 				18EC78C21D90F58F004C0F0F /* Localizable.strings in Resources */,
 				18A454DD1D7DE727003B1190 /* DayCellView.xib in Resources */,
 				18F35DEE1D76ACF1004E721B /* Assets.xcassets in Resources */,
+				182B4E051D9A9BA800EBCFEE /* GoogleService-Info.plist in Resources */,
 				18EC78BB1D90EF0B004C0F0F /* Questions.plist in Resources */,
+				182B4E0A1D9ADDE200EBCFEE /* LoginScreen.storyboard in Resources */,
 				18F35DEC1D76ACF1004E721B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +376,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182B4E061D9A9BA800EBCFEE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182B4E071D9A9BA800EBCFEE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +405,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cope/Pods-Cope-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		182B4E0D1D9AE51B00EBCFEE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" dfba788480f9545d8490a01ec2d4fba5be1828b1 6861bc6cad54908ba4e2171c3f51995a04cd38e305ff7caa77388ec98191fe61";
 		};
 		184CC2DD78FEC328BBF6C799 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -514,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182B4E0C1D9ADDF500EBCFEE /* LoginViewController.swift in Sources */,
 				18011F9E1D8C5A33002D3B7C /* Medication.swift in Sources */,
 				18A454D51D7DD970003B1190 /* SurveyOptionCell.swift in Sources */,
 				180761DA1D7E721900EB197A /* SummaryChartCell.swift in Sources */,
@@ -523,6 +556,7 @@
 				18011FA21D8C5E0F002D3B7C /* Wellness.swift in Sources */,
 				18F35DE51D76ACF1004E721B /* AppDelegate.swift in Sources */,
 				18A454DF1D7DE761003B1190 /* DayCellView.swift in Sources */,
+				18EC78C41D91148F004C0F0F /* SymptomsViewController.swift in Sources */,
 				18A454E11D7E48D1003B1190 /* CalendarViewController.swift in Sources */,
 				1860C2291D7EA73A005A636A /* AddMedicationFormViewController.swift in Sources */,
 				18A454D31D7DD1E6003B1190 /* SurveyViewController.swift in Sources */,
@@ -561,6 +595,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		182B4E081D9ADDE200EBCFEE /* LoginScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				182B4E091D9ADDE200EBCFEE /* Base */,
+			);
+			name = LoginScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		18EC78C01D90F58F004C0F0F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
