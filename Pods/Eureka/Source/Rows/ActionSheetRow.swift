@@ -25,7 +25,7 @@
 
 import Foundation
 
-public class AlertSelectorCell<T: Equatable> : Cell<T>, CellType {
+open class AlertSelectorCell<T: Equatable> : Cell<T>, CellType {
     
     required public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -35,14 +35,14 @@ public class AlertSelectorCell<T: Equatable> : Cell<T>, CellType {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func update() {
+    open override func update() {
         super.update()
         accessoryType = .none
         editingAccessoryType = accessoryType
         selectionStyle = row.isDisabled ? .none : .default
     }
     
-    public override func didSelect() {
+    open override func didSelect() {
         super.didSelect()
         row.deselect()
     }
@@ -62,9 +62,9 @@ public class _ActionSheetRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType
             vc.row = self
             return vc
             },
-                               completionCallback: { [weak self] in
-                                $0.dismiss(animated: true, completion: nil)
-                                self?.cell?.formViewController()?.tableView?.reloadData()
+            onDismiss: { [weak self] in
+                $0.dismiss(animated: true)
+                self?.cell?.formViewController()?.tableView?.reloadData()
             })
     }()
     
@@ -75,13 +75,13 @@ public class _ActionSheetRow<Cell: CellType>: OptionsRow<Cell>, PresenterRowType
     public override func customDidSelect() {
         super.customDidSelect()
         if let presentationMode = presentationMode, !isDisabled {
-            if let controller = presentationMode.createController(){
+            if let controller = presentationMode.makeController(){
                 controller.row = self
                 onPresentCallback?(cell.formViewController()!, controller)
-                presentationMode.presentViewController(controller, row: self, presentingViewController: cell.formViewController()!)
+                presentationMode.present(controller, row: self, presentingController: cell.formViewController()!)
             }
             else{
-                presentationMode.presentViewController(nil, row: self, presentingViewController: cell.formViewController()!)
+                presentationMode.present(nil, row: self, presentingController: cell.formViewController()!)
             }
         }
     }

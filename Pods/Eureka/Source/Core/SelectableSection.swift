@@ -83,7 +83,7 @@ extension SelectableSectionType where Self: Section, Self.Iterator == IndexingIt
     /**
      Internal function used to set up a collection of rows before they are added to the section
      */
-    func prepareSelectableRows(_ rows: [BaseRow]){
+    func prepare(selectableRows rows: [BaseRow]){
         for row in rows {
             if let row = row as? SelectableRow {
                 row.onCellSelection { [weak self] cell, row in
@@ -114,7 +114,7 @@ extension SelectableSectionType where Self: Section, Self.Iterator == IndexingIt
 }
 
 /// A subclass of Section that serves to create a section with a list of selectable options.
-public class SelectableSection<Row: SelectableRowType> : Section, SelectableSectionType where Row: BaseRow  {
+open class SelectableSection<Row: SelectableRowType> : Section, SelectableSectionType where Row: BaseRow  {
     
     public typealias SelectableRow = Row
     
@@ -124,7 +124,7 @@ public class SelectableSection<Row: SelectableRowType> : Section, SelectableSect
     /// A closure called when a row of this section is selected.
     public var onSelectSelectableRow: ((Row.Cell, Row) -> Void)?
     
-    public required init( _ initializer: (Section) -> ()) {
+    public required init(_ initializer: (Section) -> ()) {
         super.init(initializer)
     }
     
@@ -137,7 +137,7 @@ public class SelectableSection<Row: SelectableRowType> : Section, SelectableSect
         fatalError("init() has not been implemented")
     }
     
-    public override func rowsHaveBeenAdded(_ rows: [BaseRow], atIndexes: IndexSet) {
-        prepareSelectableRows(rows)
+    open override func rowsHaveBeenAdded(_ rows: [BaseRow], at: IndexSet) {
+        prepare(selectableRows: rows)
     }
 }

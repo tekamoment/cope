@@ -37,9 +37,9 @@ public extension JTAppleCalendarViewDelegate {
     func calendar(_ calendar : JTAppleCalendarView, didDeselectDate date : Date, cell: JTAppleDayCellView?, cellState: CellState) {}
     func calendar(_ calendar : JTAppleCalendarView, didScrollToDateSegmentStartingWithdate startDate: Date, endingWithDate endDate: Date) {}
     func calendar(_ calendar : JTAppleCalendarView, isAboutToDisplayCell cell: JTAppleDayCellView, date:Date, cellState: CellState) {}
-    func calendar(_ calendar : JTAppleCalendarView, isAboutToResetCell cell: JTAppleDayCellView){}
+//    func calendar(_ calendar : JTAppleCalendarView, isAboutToResetCell cell: JTAppleDayCellView){}
     func calendar(_ calendar : JTAppleCalendarView, isAboutToDisplaySectionHeader header: JTAppleHeaderView, dateRange: (start: Date, end: Date), identifier: String) {}
-    func calendar(_ calendar : JTAppleCalendarView, sectionHeaderIdentifierForDate dateRange: (start: Date, end: Date), belongingTo month: Int) -> String? {return nil}
+    func calendar(_ calendar : JTAppleCalendarView, sectionHeaderIdentifierForDate dateRange: (start: Date, end: Date), belongingTo month: Int) -> String {return ""}
     func calendar(_ calendar : JTAppleCalendarView, sectionHeaderSizeForDate dateRange:(start: Date, end: Date), belongingTo month: Int) -> CGSize {return CGSize.zero}
 }
 
@@ -106,13 +106,13 @@ public protocol JTAppleCalendarViewDelegate: class {
     /// Tells the delegate that the JTAppleCalendar is about to reset a date-cell. Reset your cell here before being reused on screen. Make sure this function exits quicky.
     /// - Parameters:
     ///     - cell: The date-cell that is about to be reset.
-    func calendar(_ calendar : JTAppleCalendarView, isAboutToResetCell cell: JTAppleDayCellView)
+//    func calendar(_ calendar : JTAppleCalendarView, isAboutToResetCell cell: JTAppleDayCellView)
     /// Implement this function to use headers in your project. Return your registered header for the date presented.
     /// - Parameters:
     ///     - date: Contains the startDate and endDate for the header that is about to be displayed
     /// - Returns:
     ///   String: Provide the registered header you wish to show for this date
-    func calendar(_ calendar : JTAppleCalendarView, sectionHeaderIdentifierForDate dateRange: (start: Date, end: Date), belongingTo month: Int) -> String?
+    func calendar(_ calendar : JTAppleCalendarView, sectionHeaderIdentifierForDate dateRange: (start: Date, end: Date), belongingTo month: Int) -> String
     /// Implement this function to use headers in your project. Return the size for the header you wish to present
     /// - Parameters:
     ///     - date: Contains the startDate and endDate for the header that is about to be displayed

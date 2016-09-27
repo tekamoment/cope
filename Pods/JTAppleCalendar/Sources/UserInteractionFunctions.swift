@@ -101,7 +101,19 @@ extension JTAppleCalendarView {
     /// Reload the date of specified date-cells on the calendar-view
     /// - Parameter dates: Date-cells with these specified dates will be reloaded
     public func reloadDates(_ dates: [Date]) {
-        batchReloadIndexPaths(pathsFromDates(dates))
+        var paths = [IndexPath]()
+        for date in dates {
+            let aPath = pathsFromDates([date])
+            paths.append(contentsOf: aPath)
+            
+            if aPath.count > 0 {
+                let cellState = cellStateFromIndexPath(aPath[0], withDate: date)
+                if let validCounterPartCell = indexPathOfdateCellCounterPart(date, indexPath: aPath[0], dateOwner: cellState.dateBelongsTo) {
+                    paths.append(validCounterPartCell)
+                }
+            }
+        }
+        batchReloadIndexPaths(paths)
     }
     
     /// Select a date-cell range
@@ -170,7 +182,7 @@ extension JTAppleCalendarView {
             let firstDayOfDate = self.calendar.date(from: components)!
             
             // If the date is not within valid boundaries, then exit
-            if !(firstDayOfDate >= self.startOfMonthCache && firstDayOfDate <= self.endOfMonthCache) { continue }
+            if !(firstDayOfDate >= self.startOfMonthCache as Date && firstDayOfDate <= self.endOfMonthCache as Date) { continue }
             let pathFromDates = self.pathsFromDates([date])
             
             // If the date path youre searching for, doesnt exist, then return
@@ -283,7 +295,7 @@ extension JTAppleCalendarView {
                     self.calendarView.scrollToItem(at: iPath, at: position, animated: animateScroll)
                     
                     if animateScroll {
-                        if let check = self.calendarOffsetIsAlreadyAtScrollPosition(forIndexPath: iPath), check == true {
+                        if let check = self.calendarOffsetIsAlreadyAtScrollPosition(forIndexPath: iPath) , check == true {
                                 self.scrollViewDidEndScrollingAnimation(self.calendarView)
                                 self.scrollInProgress = false
                                 return
@@ -338,7 +350,7 @@ extension JTAppleCalendarView {
     /// Parameter endDate: End date to generate dates to
     /// returns:
     ///     - An array of the successfully generated dates
-    public func generateDateRange(from startDate: Date, to endDate:Date)-> [Date] {
+    public func generateDateRange(from startDate: Date, to endDate: Date) -> [Date] {
         if startDate > endDate { return [] }
         var returnDates: [Date] = []
         var currentDate = startDate
@@ -348,5 +360,4 @@ extension JTAppleCalendarView {
         } while currentDate <= endDate
         return returnDates
     }
-
 }

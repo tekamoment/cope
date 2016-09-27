@@ -24,9 +24,9 @@
 
 import Foundation
 
-public class DatePickerCell : Cell<Date>, CellType {
+open class DatePickerCell : Cell<Date>, CellType {
     
-    public lazy var datePicker: UIDatePicker = { [unowned self] in
+    open lazy var datePicker: UIDatePicker = { [unowned self] in
         let picker = UIDatePicker()
         picker.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(picker)
@@ -44,7 +44,7 @@ public class DatePickerCell : Cell<Date>, CellType {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func setup() {
+    open override func setup() {
         super.setup()
         accessoryType = .none
         editingAccessoryType =  .none
@@ -55,7 +55,7 @@ public class DatePickerCell : Cell<Date>, CellType {
         datePicker.removeTarget(self, action: nil, for: .allEvents)
     }
     
-    public override func update() {
+    open override func update() {
         super.update()
         selectionStyle = row.isDisabled ? .none : .default
         datePicker.isUserInteractionEnabled = !row.isDisabled
@@ -89,11 +89,11 @@ public class DatePickerCell : Cell<Date>, CellType {
     }
 }
 
-public class _DatePickerRow : Row<DatePickerCell>, DatePickerRowProtocol {
+open class _DatePickerRow : Row<DatePickerCell>, DatePickerRowProtocol {
     
-    public var minimumDate : Date?
-    public var maximumDate : Date?
-    public var minuteInterval : Int?
+    open var minimumDate : Date?
+    open var maximumDate : Date?
+    open var minuteInterval : Int?
     
     required public init(tag: String?) {
         super.init(tag: tag)
@@ -101,28 +101,28 @@ public class _DatePickerRow : Row<DatePickerCell>, DatePickerRowProtocol {
     }
 }
 
-/// A row with an NSDate as value where the user can select a date directly.
+/// A row with an Date as value where the user can select a date directly.
 public final class DatePickerRow : _DatePickerRow, RowType {
     public required init(tag: String?) {
         super.init(tag: tag)
     }
 }
 
-/// A row with an NSDate as value where the user can select a time directly.
+/// A row with an Date as value where the user can select a time directly.
 public final class TimePickerRow : _DatePickerRow, RowType {
     public required init(tag: String?) {
         super.init(tag: tag)
     }
 }
 
-/// A row with an NSDate as value where the user can select date and time directly.
+/// A row with an Date as value where the user can select date and time directly.
 public final class DateTimePickerRow : _DatePickerRow, RowType {
     public required init(tag: String?) {
         super.init(tag: tag)
     }
 }
 
-/// A row with an NSDate as value where the user can select hour and minute as a countdown timer.
+/// A row with an Date as value where the user can select hour and minute as a countdown timer.
 public final class CountDownPickerRow : _DatePickerRow, RowType {
     public required init(tag: String?) {
         super.init(tag: tag)

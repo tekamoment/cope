@@ -26,7 +26,7 @@ import Foundation
 
 
 /// Selector Controller that enables multiple selection
-public class _MultipleSelectorViewController<T:Hashable, Row: SelectableRowType> : FormViewController, TypedRowControllerType where Row: BaseRow, Row: TypedRowType, Row.Cell.Value == T {
+open class _MultipleSelectorViewController<T:Hashable, Row: SelectableRowType> : FormViewController, TypedRowControllerType where Row: BaseRow, Row: TypedRowType, Row.Cell.Value == T {
     
     /// The row that pushed or presented this controller
     public var row: RowOf<Set<T>>!
@@ -35,7 +35,7 @@ public class _MultipleSelectorViewController<T:Hashable, Row: SelectableRowType>
     public var selectableRowCellUpdate: ((_ cell: Row.Cell, _ row: Row) -> ())?
 
     /// A closure to be called when the controller disappears.
-    public var completionCallback : ((UIViewController) -> ())?
+    public var onDismissCallback : ((UIViewController) -> ())?
     
     override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -43,14 +43,14 @@ public class _MultipleSelectorViewController<T:Hashable, Row: SelectableRowType>
     
     convenience public init(_ callback: ((UIViewController) -> ())?){
         self.init(nibName: nil, bundle: nil)
-        completionCallback = callback
+        onDismissCallback = callback
     }
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         guard let options = row.dataProvider?.arrayData else { return }
         let _ =  form +++ SelectableSection<Row>(row.title ?? "", selectionType: .multipleSelection) { [weak self] section in
@@ -85,7 +85,7 @@ public class _MultipleSelectorViewController<T:Hashable, Row: SelectableRowType>
 }
 
 
-public class MultipleSelectorViewController<T:Hashable> : _MultipleSelectorViewController<T, ListCheckRow<T>> {
+open class MultipleSelectorViewController<T:Hashable> : _MultipleSelectorViewController<T, ListCheckRow<T>> {
 }
 
 

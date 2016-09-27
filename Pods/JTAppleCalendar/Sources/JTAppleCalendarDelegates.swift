@@ -11,7 +11,7 @@ extension JTAppleCalendarView: UICollectionViewDataSource, UICollectionViewDeleg
     /// Asks your data source object to provide a supplementary view to display in the collection view.
     
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let validDate = dateFromSection(indexPath.section) else {
+        guard let validDate = dateFromSection((indexPath as NSIndexPath).section) else {
             assert(false, "Date could not be generated fro section. This is a bug. Contact the developer")
             return UICollectionReusableView()
         }
@@ -26,7 +26,7 @@ extension JTAppleCalendarView: UICollectionViewDataSource, UICollectionViewDeleg
             case let .fromType(classType): reuseIdentifier = classType.description()
             }
         } else {
-            reuseIdentifier = delegate!.calendar(self, sectionHeaderIdentifierForDate: validDate.dateRange, belongingTo: validDate.month)!
+            reuseIdentifier = delegate!.calendar(self, sectionHeaderIdentifierForDate: validDate.dateRange, belongingTo: validDate.month)
             for item in registeredHeaderViews {
                 switch item {
                 case let .fromXib(xibName) where xibName == reuseIdentifier:
@@ -51,9 +51,9 @@ extension JTAppleCalendarView: UICollectionViewDataSource, UICollectionViewDeleg
         return headerView
     }
     
-    public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        delegate?.calendar(self, isAboutToResetCell: (cell as! JTAppleDayCell).view!)
-    }
+//    public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        delegate?.calendar(self, isAboutToResetCell: (cell as! JTAppleDayCell).view!)
+//    }
     
     /// Asks your data source object for the cell that corresponds to the specified item in the collection view.
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -84,10 +84,11 @@ extension JTAppleCalendarView: UICollectionViewDataSource, UICollectionViewDeleg
     /// Asks the delegate if the specified item should be selected. true if the item should be selected or false if it should not.
     public func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         
-        if
-            let delegate = self.delegate,
+        if let
+            delegate = self.delegate,
             let dateUserSelected = dateFromPath(indexPath),
-            let cell = collectionView.cellForItem(at: indexPath) as? JTAppleDayCell,
+            let cell = collectionView.cellForItem(at: indexPath) as? JTAppleDayCell
+        ,
             cellWasNotDisabledOrHiddenByTheUser(cell) {
             let cellState = cellStateFromIndexPath(indexPath, withDate: dateUserSelected)
             return delegate.calendar(self, canSelectDate: dateUserSelected, cell: cell.view!, cellState: cellState)
@@ -105,9 +106,10 @@ extension JTAppleCalendarView: UICollectionViewDataSource, UICollectionViewDeleg
         internalCollectionView(collectionView, didDeselectItemAtIndexPath: indexPath, indexPathsToReload: indexPathsToBeReloaded)
     }
     func internalCollectionView(_ collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: IndexPath, indexPathsToReload: [IndexPath] = []) {
-        if
-            let delegate = self.delegate,
+        if let
+            delegate = self.delegate,
             let dateDeselectedByUser = dateFromPath(indexPath) {
+            
             // Update model
             deleteCellFromSelectedSetIfSelected(indexPath)
             
@@ -130,11 +132,11 @@ extension JTAppleCalendarView: UICollectionViewDataSource, UICollectionViewDeleg
     
     /// Asks the delegate if the specified item should be deselected. true if the item should be deselected or false if it should not.
     public func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
-        if
-            let delegate = self.delegate,
+        if let
+            delegate = self.delegate,
             let dateDeSelectedByUser = dateFromPath(indexPath),
-            let cell = collectionView.cellForItem(at: indexPath) as? JTAppleDayCell,
-            cellWasNotDisabledOrHiddenByTheUser(cell) {
+            let cell = collectionView.cellForItem(at: indexPath) as? JTAppleDayCell
+        , cellWasNotDisabledOrHiddenByTheUser(cell) {
             let cellState = cellStateFromIndexPath(indexPath, withDate: dateDeSelectedByUser)
             return delegate.calendar(self, canDeselectDate: dateDeSelectedByUser, cell: cell.view!, cellState:  cellState)
         }
@@ -149,8 +151,8 @@ extension JTAppleCalendarView: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func internalCollectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath, indexPathsToReload: [IndexPath] = []) {
-        if
-            let delegate = self.delegate,
+        if let
+            delegate = self.delegate,
             let dateSelectedByUser = dateFromPath(indexPath) {
             
             // Update model
@@ -361,7 +363,7 @@ extension JTAppleCalendarView: UIScrollViewDelegate {
     
     /// Tells the delegate when a scrolling animation in the scroll view concludes.
     public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        if let shouldTrigger = triggerScrollToDateDelegate, shouldTrigger == true {
+        if let shouldTrigger = triggerScrollToDateDelegate , shouldTrigger == true {
             scrollViewDidEndDecelerating(scrollView)
             triggerScrollToDateDelegate = nil
         }

@@ -23,7 +23,7 @@
 // THE SOFTWARE.
 import Foundation
 
-public class _DateRow: _DateFieldRow {
+open class _DateRow: _DateFieldRow {
     required public init(tag: String?) {
         super.init(tag: tag)
         dateFormatter = DateFormatter()
@@ -34,7 +34,7 @@ public class _DateRow: _DateFieldRow {
 }
 
 
-public class _TimeRow: _DateFieldRow {
+open class _TimeRow: _DateFieldRow {
     required public init(tag: String?) {
         super.init(tag: tag)
         dateFormatter = DateFormatter()
@@ -44,7 +44,7 @@ public class _TimeRow: _DateFieldRow {
     }
 }
 
-public class _DateTimeRow: _DateFieldRow {
+open class _DateTimeRow: _DateFieldRow {
     required public init(tag: String?) {
         super.init(tag: tag)
         dateFormatter = DateFormatter()
@@ -54,7 +54,7 @@ public class _DateTimeRow: _DateFieldRow {
     }
 }
 
-public class _CountDownRow: _DateFieldRow {
+open class _CountDownRow: _DateFieldRow {
     required public init(tag: String?) {
         super.init(tag: tag)
         displayValueFor = { [unowned self] value in
@@ -64,7 +64,7 @@ public class _CountDownRow: _DateFieldRow {
             if let formatter = self.dateFormatter {
                 return formatter.string(from: val)
             }
-            let components = Calendar.current.dateComponents([Calendar.Component.minute, Calendar.Component.hour], from: val as Date)
+            let components = Calendar.current.dateComponents([Calendar.Component.minute, Calendar.Component.hour], from: val)
             var hourString = "hour"
             if components.hour != 1{
                 hourString += "s"
@@ -74,7 +74,7 @@ public class _CountDownRow: _DateFieldRow {
     }
 }
 
-/// A row with an NSDate as value where the user can select a date from a picker view.
+/// A row with an Date as value where the user can select a date from a picker view.
 public final class DateRow: _DateRow, RowType {
     required public init(tag: String?) {
         super.init(tag: tag)
@@ -82,21 +82,21 @@ public final class DateRow: _DateRow, RowType {
 }
 
 
-/// A row with an NSDate as value where the user can select a time from a picker view.
+/// A row with an Date as value where the user can select a time from a picker view.
 public final class TimeRow: _TimeRow, RowType {
     required public init(tag: String?) {
         super.init(tag: tag)
     }
 }
 
-/// A row with an NSDate as value where the user can select date and time from a picker view.
+/// A row with an Date as value where the user can select date and time from a picker view.
 public final class DateTimeRow: _DateTimeRow, RowType {
     required public init(tag: String?) {
         super.init(tag: tag)
     }
 }
 
-/// A row with an NSDate as value where the user can select hour and minute as a countdown timer in a picker view.
+/// A row with an Date as value where the user can select hour and minute as a countdown timer in a picker view.
 public final class CountDownRow: _CountDownRow, RowType {
     required public init(tag: String?) {
         super.init(tag: tag)
