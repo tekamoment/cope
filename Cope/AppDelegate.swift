@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 import ChameleonFramework
 
 @UIApplicationMain
@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBar.appearance().isOpaque = true
         UITabBar.appearance().tintColor = UIColor(hexString: "F38A8A")
+        
+        FIRApp.configure()
         return true
     }
 
