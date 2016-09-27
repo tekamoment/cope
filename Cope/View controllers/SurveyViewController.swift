@@ -20,15 +20,28 @@ private let surveyCellReuseIdentifier = "SurveyOptionCell"
 
 class SurveyViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var surveyQuestion: SurveyQuestion?
+//    var surveyQuestion: SurveyQuestion?
+    var questionnaire: SymptomQuestionnaire?
+    var surveyQuestion: SymptomQuestion?
+    var currentQuestion: Int?
+    
+    var results: [(String, Float)] = [(String, Float)]()
+    
+    var delegate: SurveyViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        questionnaire = SymptomQuestionnaire()
+        if questionnaire != nil {
+            surveyQuestion = questionnaire?.questions.first
+            currentQuestion = 0
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        surveyQuestion = SurveyQuestion(questionTitle: "Your Quality of Sleep", questionSubtitle: "How long did you sleep last night?", choices: [("0-4 hours", 2), ("4-6 hours", 3), ("6-9 hours", 4), ("9 or more hours", 2)])
+//        surveyQuestion = SurveyQuestion(questionTitle: "Your Quality of Sleep", questionSubtitle: "How long did you sleep last night?", choices: [("0-4 hours", 2), ("4-6 hours", 3), ("6-9 hours", 4), ("9 or more hours", 2)])
         
         collectionView?.delegate = self
+        self.navigationItem.title = NSLocalizedString(surveyQuestion!.category, comment: "Question title for \(surveyQuestion!.category)")
 
         // Do any additional setup after loading the view.
     }
@@ -62,9 +75,16 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: surveyCellReuseIdentifier, for: indexPath) as! SurveyOptionCell
         
-        print("\(surveyQuestion!.choices[(indexPath as NSIndexPath).item].0)")
+        switch surveyQuestion!.choices[(indexPath as NSIndexPath).item] {
+        case .Title(let title, _):
+            cell.titleLabel.text = NSLocalizedString(title, comment: "Choice label for \(title)")
+        case .TitleSubtitle(let title, _, _):
+             cell.titleLabel.text = NSLocalizedString(title, comment: "Choice label for \(title)")
+        }
+        
+//        print("\(surveyQuestion!.choices[(indexPath as NSIndexPath).item].0)")
     
-        cell.titleLabel.text = surveyQuestion!.choices[(indexPath as NSIndexPath).item].0
+//        cell.titleLabel.text = surveyQuestion!.choices[(indexPath as NSIndexPath).item].0
         // Configure the cell
     
         cell.layer.masksToBounds = false
@@ -79,8 +99,9 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
         switch kind {
         case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SurveyHeaderView", for: indexPath) as! SurveyHeaderReusableView
-            headerView.headerTitle.text = surveyQuestion!.questionTitle
-            headerView.headerSubtitle.text = surveyQuestion!.questionSubtitle
+            headerView.headerTitle.text = NSLocalizedString(surveyQuestion!.title, comment: "Question title for \(surveyQuestion!.title)")
+            headerView.headerSubtitle.text = NSLocalizedString(surveyQuestion!.subtitle, comment: "Question title for \(surveyQuestion!.subtitle)")
+            headerView.iconView.image = UIImage(named: surveyQuestion!.icon)!
             return headerView
         
         default:
@@ -98,6 +119,30 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
         return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let chosenChoice = surveyQuestion!.choices[indexPath.item]
+        
+        switch chosenChoice {
+        case .Title(let title, let value):
+            results.append((title, value))
+        
+        case .TitleSubtitle(let title, _, let value):
+            results.append((title, value))
+        }
+        
+        if currentQuestion != questionnaire!.questions.count - 1 {
+            currentQuestion = (questionnaire?.questions.index(after: currentQuestion!))!
+            surveyQuestion = questionnaire?.questions[currentQuestion!]
+            self.navigationItem.title = NSLocalizedString(surveyQuestion!.category, comment: "Question title for \(surveyQuestion!.category)")
+
+            collectionView.reloadData()
+        } else {
+            // send data back
+            delegate?.surveyFinished(withResults: results)
+        }
+        
+    }
 
     // MARK: UICollectionViewDelegate
 
@@ -129,5 +174,8 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
     
     }
     */
+}
 
+protocol SurveyViewControllerDelegate {
+    func surveyFinished(withResults: [(String, Float)])
 }

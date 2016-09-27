@@ -10,6 +10,7 @@ import UIKit
 
 class SurveyHeaderReusableView: UICollectionReusableView {
         
+    @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var headerTitle: UILabel!
     @IBOutlet weak var headerSubtitle: UILabel!
 }
