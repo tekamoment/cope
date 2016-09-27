@@ -18,8 +18,46 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.638037790387-9fra18epd390rsov61i52orj51eicp2l</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.carlosarcenas.Cope</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>dfba788480f9545d8490a01ec2d4fba5be1828b1</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consumerKey</key>
+					<string>WretU4g0qnlrEfcsfLviHj6Ir</string>
+					<key>consumerSecret</key>
+					<string>IeOSJdVISJjYramwvQXpuhUjcYXnL633LOgKzaSZnM48wgN4Mi</string>
+				</dict>
+				<key>KitName</key>
+				<string>Twitter</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -42,11 +80,30 @@
 			<false/>
 		</dict>
 	</dict>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+    <key>Fabric</key>
+    <dict>
+        <key>APIKey</key>
+        <string>dfba788480f9545d8490a01ec2d4fba5be1828b1</string>
+        <key>Kits</key>
+        <array>
+            <dict>
+                <key>KitInfo</key>
+                <dict>
+                    <key>consumerKey</key>
+                    <string>wIiuzJj5gEARgWW2ezT43HsPK</string>
+                    <key>consumerSecret</key>
+                    <string>E83JmcBSCQfyBoadWzcXLVtpKJHQWARrBVmYPYDHspwYQYW4Ky</string>
+                </dict>
+                <key>KitName</key>
+                <string>Twitter</string>
+            </dict>
+        </array>
+    </dict>
 </dict>
 </plist>

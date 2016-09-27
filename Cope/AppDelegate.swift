@@ -10,6 +10,10 @@ import UIKit
 import Firebase
 import ChameleonFramework
 
+import Fabric
+import TwitterKit
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -27,7 +31,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().isOpaque = true
         UITabBar.appearance().tintColor = UIColor(hexString: "F38A8A")
         
+        Fabric.with([Twitter.self])
+        
         FIRApp.configure()
+        
+        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+            if let user = user {
+                // User is signed in.
+                print("User is \(user).")
+            } else {
+                // No user is signed in.
+                print("No user has signed in.")
+            }
+        }
         return true
     }
 
