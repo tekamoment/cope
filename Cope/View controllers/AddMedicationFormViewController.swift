@@ -15,7 +15,16 @@ class AddMedicationFormViewController: FormViewController {
         self.tableView = super.tableView
         form = Form()
         
-        form +++ Section()
+        form +++ Section() { section in
+                section.footer = {
+                    var footer = HeaderFooterView<UIView>(.callback({
+                    let view = UIView()
+                    return view
+                    }))
+                    footer.height = { 0 }
+                    return footer
+                }()
+            }
             <<< TextRow() { row in
                 row.title = "Medicine Name"
             }
