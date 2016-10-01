@@ -11,5 +11,5 @@ import Foundation
 struct Wellness {
     let date: Date
     let score: Float
-    
+    let components: [String]
 }
