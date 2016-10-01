@@ -13,9 +13,9 @@ PODS:
   - Charts/Core (2.2.5)
   - Eureka (2.0.0-beta.1)
   - Fabric (1.6.9)
-  - FBSDKCoreKit (4.15.1):
+  - FBSDKCoreKit (4.16.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.15.1):
+  - FBSDKLoginKit (4.16.0):
     - FBSDKCoreKit
   - Firebase/Analytics (3.6.0):
     - FirebaseAnalytics (= 3.4.2)
@@ -74,12 +74,12 @@ PODS:
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
   - JTAppleCalendar (5.0.1)
-  - KCFloatingActionButton (2.0.1)
+  - KCFloatingActionButton (2.1.1)
   - TagListView (1.0.0)
-  - TwitterCore (2.4.0):
+  - TwitterCore (2.5.0):
     - Fabric
-  - TwitterKit (2.4.0):
-    - TwitterCore (= 2.4.0)
+  - TwitterKit (2.5.0):
+    - TwitterCore (= 2.5.0)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift
@@ -90,7 +90,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - FirebaseUI (~> 0.5)
-  - JTAppleCalendar (from `https://github.com/patchthecode/JTAppleCalendar.git`, branch `Swift3`)
+  - JTAppleCalendar (from `https://github.com/patchthecode/JTAppleCalendar.git`, branch `updatedSwift3`)
   - KCFloatingActionButton (from `https://github.com/kciter/KCFloatingActionButton.git`)
   - TagListView (from `https://github.com/xhacker/TagListView.git`, branch `master`)
   - TwitterCore
@@ -103,7 +103,7 @@ EXTERNAL SOURCES:
   Eureka:
     :git: https://github.com/xmartlabs/Eureka.git
   JTAppleCalendar:
-    :branch: Swift3
+    :branch: updatedSwift3
     :git: https://github.com/patchthecode/JTAppleCalendar.git
   KCFloatingActionButton:
     :git: https://github.com/kciter/KCFloatingActionButton.git
@@ -116,13 +116,13 @@ CHECKOUT OPTIONS:
     :commit: ab3bb619df2c2d165b41736b6bc25a4218833252
     :git: https://github.com/danielgindi/Charts.git
   Eureka:
-    :commit: 3efe00e9a65a48c8823e7622dcd478efdc78b753
+    :commit: e3b51dc3834267515246be5486c37d88941b998c
     :git: https://github.com/xmartlabs/Eureka.git
   JTAppleCalendar:
     :commit: 87d164c928c7296a31523208c09f51d33e74b118
     :git: https://github.com/patchthecode/JTAppleCalendar.git
   KCFloatingActionButton:
-    :commit: 6de2c1c5190f2185d0a2464854ca3cff520f27af
+    :commit: 93544f98333b06bf81226b32524d39e4a61d8ad1
     :git: https://github.com/kciter/KCFloatingActionButton.git
   TagListView:
     :commit: 876785a171d4402bb5defc6361d3d02fe4fcdf26
@@ -134,8 +134,8 @@ SPEC CHECKSUMS:
   Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
   Eureka: d014adf16406745e1a78d5790ea37ed130a0a8e5
   Fabric: bc5bec42cef4bcf1ee3ce0e218fc518e4b44dfbb
-  FBSDKCoreKit: fc7fa53d16b095ee3fd53f0cd59f1df8bcbb634d
-  FBSDKLoginKit: 073f79b3b2e762fc6f54a283fe15f45372d59f5f
+  FBSDKCoreKit: 7a6baaed4a2b2a244ba253346713bdbc74df135b
+  FBSDKLoginKit: 9a514a55a7d05190f64d4ef09502737588b5b561
   Firebase: 34187200ef4979dbd485c7aa685ef078bf587c86
   FirebaseAnalytics: 3f5358d9104adf159cc8d99b7b501e50099a39ad
   FirebaseAuth: 75a062bbf2d3c97d1e6e55bbc110e13a6853e25d
@@ -150,11 +150,11 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   JTAppleCalendar: cb2417b1f3367d1993e31720a663646742139a5c
-  KCFloatingActionButton: 6374d1072fedfb45606ff3bc07d3e1c3f1e1ddcc
+  KCFloatingActionButton: 084cfe9d16b741be33393c99757f5967296c7645
   TagListView: 6bf4bded034c4c90b1e90d8cd3d8e1d852dba0a8
-  TwitterCore: a139904c80805ad3dde9eef1100704f96f646d1d
-  TwitterKit: 1cf9742edf9d182c1518cfdd6aaac0dfe313b38b
+  TwitterCore: 95c46af93112768a7983bd370d66023553601d01
+  TwitterKit: dd8042698b0ff5bd3066fa919b3b2b50d8eed829
 
-PODFILE CHECKSUM: 79113af394cbb1f7743e493d506053e23bfffa11
+PODFILE CHECKSUM: bc45cf8436a97a38021eee15ccd152008d62681d
 
 COCOAPODS: 1.1.0.rc.2

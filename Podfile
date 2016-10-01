@@ -5,7 +5,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'Cope' do
-pod 'JTAppleCalendar', :git => 'https://github.com/patchthecode/JTAppleCalendar.git', :branch => 'Swift3' # for the calendar coloring
+pod 'JTAppleCalendar', :git => 'https://github.com/patchthecode/JTAppleCalendar.git', :branch => 'updatedSwift3' # for the calendar coloring
 pod 'KCFloatingActionButton', :git => 'https://github.com/kciter/KCFloatingActionButton.git' #, '~> 2.0.0' # for the floating plus button
 pod 'Charts', :git => "https://github.com/danielgindi/Charts.git", :branch => 'Chart2.2.5-Swift3.0' # for the charts in the summary view
 pod 'Eureka', :git => 'https://github.com/xmartlabs/Eureka.git' # , :branch => 'Swift3' # for the forms

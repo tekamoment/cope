@@ -11,7 +11,7 @@ import UIKit
 struct SurveyQuestion {
     var questionTitle: String
     var questionSubtitle: String
-    var choices: [(String, Float)]
+    var choices: [String: (String, Float)]
 }
 
 
@@ -25,7 +25,7 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
     var surveyQuestion: SymptomQuestion?
     var currentQuestion: Int?
     
-    var results: [(String, Float)] = [(String, Float)]()
+    var results: [String: (String, Float)] = [String: (String, Float)]()
     
     var delegate: SurveyViewControllerDelegate?
 
@@ -125,10 +125,13 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
         
         switch chosenChoice {
         case .Title(let title, let value):
-            results.append((title, value))
+//            results.append(category: (title, value))
+            results[surveyQuestion!.category] = (title, value)
         
         case .TitleSubtitle(let title, _, let value):
-            results.append((title, value))
+//            results.append(category: (title, value))
+            results[surveyQuestion!.category] = (title, value)
+
         }
         
         if currentQuestion != questionnaire!.questions.count - 1 {
@@ -177,5 +180,5 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
 }
 
 protocol SurveyViewControllerDelegate {
-    func surveyFinished(withResults: [(String, Float)])
+    func surveyFinished(withResults: [String: (String, Float)])
 }
