@@ -12,6 +12,10 @@ calendar = "Calendar";
 symptoms = "Symptoms";
 medication = "Medication";
 
+error-okay = "Okay";
+error = "Error";
+error-facebookLoginMessage = "An error occurred while logging into Facebook.";
+error-twitterLoginMessage = "An error occurred while logging into Twitter.";
 
 /* Sleep */
 

@@ -29,7 +29,10 @@ class LoginViewController: UIViewController {
         manager.logIn(withReadPermissions: ["public_profile"],
                       from: self) { (result, error) in
                         if (error != nil) {
-                            
+                            let okayAction = UIAlertAction(title: NSLocalizedString("error-okay", comment: "Error for Okay string."), style: UIAlertActionStyle.default, handler: nil)
+                            let alertController = UIAlertController(title: NSLocalizedString("error", comment: "Error occurred."), message: NSLocalizedString("error-facebookLoginMessage", comment: "Error message for Facebook Login"), preferredStyle: UIAlertControllerStyle.alert)
+                            alertController.addAction(okayAction)
+                            self.present(alertController, animated: true, completion: nil)
                         } else if (result?.isCancelled)! {
                             
                         } else {
@@ -40,6 +43,13 @@ class LoginViewController: UIViewController {
 
     @IBAction func connectWithTwitterPressed(_ sender: AnyObject) {
         Twitter.sharedInstance().logIn(with: self) { (session, error) in
+            if (error != nil) {
+                let okayAction = UIAlertAction(title: NSLocalizedString("error-okay", comment: "Error for Okay string."), style: UIAlertActionStyle.default, handler: nil)
+                let alertController = UIAlertController(title: NSLocalizedString("error", comment: "Error occurred."), message: NSLocalizedString("error-twitterLoginMessage", comment: "Error message for Twitter Login"), preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(okayAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
             if (session != nil) {
                 self.signInWithCredential(credential: FIRTwitterAuthProvider.credential(withToken: session!.authToken, secret: session!.authTokenSecret))
             }
