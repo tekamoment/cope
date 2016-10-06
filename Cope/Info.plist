@@ -49,9 +49,9 @@
 				<key>KitInfo</key>
 				<dict>
 					<key>consumerKey</key>
-					<string>WretU4g0qnlrEfcsfLviHj6Ir</string>
+					<string>wIiuzJj5gEARgWW2ezT43HsPK</string>
 					<key>consumerSecret</key>
-					<string>IeOSJdVISJjYramwvQXpuhUjcYXnL633LOgKzaSZnM48wgN4Mi</string>
+					<string>E83JmcBSCQfyBoadWzcXLVtpKJHQWARrBVmYPYDHspwYQYW4Ky</string>
 				</dict>
 				<key>KitName</key>
 				<string>Twitter</string>
@@ -83,27 +83,10 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-    <key>Fabric</key>
-    <dict>
-        <key>APIKey</key>
-        <string>dfba788480f9545d8490a01ec2d4fba5be1828b1</string>
-        <key>Kits</key>
-        <array>
-            <dict>
-                <key>KitInfo</key>
-                <dict>
-                    <key>consumerKey</key>
-                    <string>wIiuzJj5gEARgWW2ezT43HsPK</string>
-                    <key>consumerSecret</key>
-                    <string>E83JmcBSCQfyBoadWzcXLVtpKJHQWARrBVmYPYDHspwYQYW4Ky</string>
-                </dict>
-                <key>KitName</key>
-                <string>Twitter</string>
-            </dict>
-        </array>
-    </dict>
 </dict>
 </plist>

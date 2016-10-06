@@ -42,18 +42,19 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         
         calendarView.scrollEnabled = false
         
-        calendarView.cellInset = CGPoint(x: 0.5, y: 0.5)
+        calendarView.cellInset = CGPoint(x: 1, y: 1)
         
         self.tabBarController!.title = NSLocalizedString("calendar", comment: "Calendar")
         // Do any additional setup after loading the view.
         
         // set query to current month
         dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy MM dd"
+        dateFormatter.dateFormat = "MMMM yyyy"
+        monthYearLabel.text = dateFormatter.string(from: Date())
         
         
         // firebase fetch
-        fetchDataForDate(year: 2016, month: 9) { (snapshot) in
+        DatabaseConstants.fetchDataForMonth(userID: userID, year: 2016, month: 10) { (snapshot) in
             debugPrint(snapshot)
             self.requestedMonthData = snapshot.value as? NSDictionary
             self.calendarView.reloadData()
@@ -86,7 +87,7 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         endComponents.day = -1
         let endOfMonth = (usedCalendar as NSCalendar).date(byAdding: endComponents, to: startOfMonth, options: [])!
         
-        let numberOfCalendarRows = 3
+        let numberOfCalendarRows = 6
         
         return (startDate: startOfMonth, endDate: endOfMonth, numberOfRows: numberOfCalendarRows, calendar: usedCalendar)
     }
@@ -157,7 +158,7 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         
         // FORMAT DATES CORRECTLY ACCORDING TO INTERNATIONALIZATION
         wellnessScoreLabel.text = "Your wellness score for this day is \(score)."
-        summaryLabel.text = "You had \(NSLocalizedString(dayData["sleepCategory"] as! String, comment:"Hours of sleep a user had"))"
+        summaryLabel.text = "You had \(NSLocalizedString(dayData["sleepCategory"] as! String, comment:"Hours of sleep a user had")) of sleep, were \(NSLocalizedString(dayData["emotionCategory"] as! String, comment:"User's emotion"))"
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
@@ -173,14 +174,6 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
     @IBAction func nextMonthPressed(_ sender: AnyObject) {
         // increment month
         calendarView.reloadData()
-    }
-    
-    func fetchDataForDate(year: Int, month: Int, completion: @escaping (_: FIRDataSnapshot) -> Void) {
-        // change parameter to something more manageable, i.e. [Int: [String: String]]
-        // change to incorporate actual user id
-        FIRDatabase.database().reference().child(DatabaseConstants.users).child(userID).child(DatabaseConstants.surveyData).child(String(year)).child(String(month)).observeSingleEvent(of: .value) { (snapshot) in
-            completion(snapshot)
-        }
     }
     
     /*

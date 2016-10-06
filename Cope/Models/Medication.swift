@@ -12,4 +12,5 @@ struct Medication {
     let name: String
     var reminder: Bool
     var dosage: String?
+    // time.
 }

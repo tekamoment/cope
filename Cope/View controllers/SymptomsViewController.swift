@@ -11,6 +11,7 @@ import Firebase
 
 class SymptomsViewController: UIViewController, SurveyViewControllerDelegate {
 
+    @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var checkInButton: UIButton!
     let userID = "tester"
     let surveyData = DatabaseConstants.surveyData
@@ -38,6 +39,7 @@ class SymptomsViewController: UIViewController, SurveyViewControllerDelegate {
         todayDataRef!.observe(FIRDataEventType.value) { (snapshot : FIRDataSnapshot) in
             if snapshot.exists() {
                 self.checkInButton.isHidden = true
+                self.greetingLabel.text = "Thanks for checking in!"
             } else {
                 debugPrint("This day doesn't exist.")
             }
