@@ -96,17 +96,17 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionElementKindSectionHeader:
+//        switch kind {
+//        case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SurveyHeaderView", for: indexPath) as! SurveyHeaderReusableView
             headerView.headerTitle.text = NSLocalizedString(surveyQuestion!.title, comment: "Question title for \(surveyQuestion!.title)")
             headerView.headerSubtitle.text = NSLocalizedString(surveyQuestion!.subtitle, comment: "Question title for \(surveyQuestion!.subtitle)")
             headerView.iconView.image = UIImage(named: surveyQuestion!.icon)!
             return headerView
         
-        default:
-            assert(false, "Unexpected element kind")
-        }
+//        default:
+//            assert(false, "Unexpected element kind")
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -37,8 +37,6 @@
 		18F35DF11D76ACF1004E721B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F35DEF1D76ACF1004E721B /* LaunchScreen.storyboard */; };
 		18F35DFC1D76ACF2004E721B /* CopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F35DFB1D76ACF2004E721B /* CopeTests.swift */; };
 		18F35E071D76ACF2004E721B /* CopeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F35E061D76ACF2004E721B /* CopeUITests.swift */; };
-		1C79F5844211AFC03E30EFCB /* Pods_CopeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8012DB6D187DE97AB973FEE /* Pods_CopeUITests.framework */; };
-		7BBF5BEB898350D2390957A2 /* Pods_CopeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87C355E7D5DBC930251D164 /* Pods_CopeTests.framework */; };
 		9FEB863F751C81E819D65BBC /* Pods_Cope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F455E059B8FB39CB5B479090 /* Pods_Cope.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,10 +95,6 @@
 		18F35E081D76ACF2004E721B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2070AAA8FFFA04D1E6C936C3 /* Pods-Cope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cope.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cope/Pods-Cope.debug.xcconfig"; sourceTree = "<group>"; };
 		34660174B92557A0552A7097 /* Pods-Cope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cope.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cope/Pods-Cope.release.xcconfig"; sourceTree = "<group>"; };
-		3869C8BC0C830F95DA6F4DCF /* Pods-CopeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CopeTests/Pods-CopeTests.release.xcconfig"; sourceTree = "<group>"; };
-		8C7659F6435C1037905CECA8 /* Pods-CopeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CopeTests/Pods-CopeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B1D850E431122ACC52C575ED /* Pods-CopeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CopeUITests/Pods-CopeUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		DAACAF9093B00459DE1EEE49 /* Pods-CopeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CopeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CopeUITests/Pods-CopeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F455E059B8FB39CB5B479090 /* Pods_Cope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8012DB6D187DE97AB973FEE /* Pods_CopeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CopeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87C355E7D5DBC930251D164 /* Pods_CopeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CopeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,7 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BBF5BEB898350D2390957A2 /* Pods_CopeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +120,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C79F5844211AFC03E30EFCB /* Pods_CopeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,10 +229,6 @@
 			children = (
 				2070AAA8FFFA04D1E6C936C3 /* Pods-Cope.debug.xcconfig */,
 				34660174B92557A0552A7097 /* Pods-Cope.release.xcconfig */,
-				8C7659F6435C1037905CECA8 /* Pods-CopeTests.debug.xcconfig */,
-				3869C8BC0C830F95DA6F4DCF /* Pods-CopeTests.release.xcconfig */,
-				B1D850E431122ACC52C575ED /* Pods-CopeUITests.debug.xcconfig */,
-				DAACAF9093B00459DE1EEE49 /* Pods-CopeUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -283,12 +271,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18F35E0E1D76ACF2004E721B /* Build configuration list for PBXNativeTarget "CopeTests" */;
 			buildPhases = (
-				8B1F9834328DC95BF121D7A3 /* [CP] Check Pods Manifest.lock */,
 				18F35DF31D76ACF2004E721B /* Sources */,
 				18F35DF41D76ACF2004E721B /* Frameworks */,
 				18F35DF51D76ACF2004E721B /* Resources */,
-				A18B606013335803ED5EE642 /* [CP] Embed Pods Frameworks */,
-				4A0DBFAB0A08D99BAFC3A38B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,12 +289,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18F35E111D76ACF2004E721B /* Build configuration list for PBXNativeTarget "CopeUITests" */;
 			buildPhases = (
-				184CC2DD78FEC328BBF6C799 /* [CP] Check Pods Manifest.lock */,
 				18F35DFE1D76ACF2004E721B /* Sources */,
 				18F35DFF1D76ACF2004E721B /* Frameworks */,
 				18F35E001D76ACF2004E721B /* Resources */,
-				355CDF4AB57A6CBC993ECBDD /* [CP] Copy Pods Resources */,
-				986E70DBAE587474D69D2380 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -431,51 +413,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" dfba788480f9545d8490a01ec2d4fba5be1828b1 6861bc6cad54908ba4e2171c3f51995a04cd38e305ff7caa77388ec98191fe61";
 		};
-		184CC2DD78FEC328BBF6C799 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		355CDF4AB57A6CBC993ECBDD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CopeUITests/Pods-CopeUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4A0DBFAB0A08D99BAFC3A38B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CopeTests/Pods-CopeTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6295EC22D6DBD1CAA808EF12 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -504,51 +441,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cope/Pods-Cope-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8B1F9834328DC95BF121D7A3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		986E70DBAE587474D69D2380 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CopeUITests/Pods-CopeUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A18B606013335803ED5EE642 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CopeTests/Pods-CopeTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -957,7 +849,6 @@
 		};
 		18F35E0F1D76ACF2004E721B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C7659F6435C1037905CECA8 /* Pods-CopeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CopeTests/Info.plist;
@@ -971,7 +862,6 @@
 		};
 		18F35E101D76ACF2004E721B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3869C8BC0C830F95DA6F4DCF /* Pods-CopeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CopeTests/Info.plist;
@@ -985,7 +875,6 @@
 		};
 		18F35E121D76ACF2004E721B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1D850E431122ACC52C575ED /* Pods-CopeUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = CopeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -998,7 +887,6 @@
 		};
 		18F35E131D76ACF2004E721B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DAACAF9093B00459DE1EEE49 /* Pods-CopeUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = CopeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -15,7 +15,7 @@ pod 'Firebase'
 pod 'Firebase/Core' # Core firebase
 pod 'Firebase/Database' # Firebase Real-time Database
 pod 'Firebase/Auth' # Firebase Authentication
-#pod 'FirebaseUI', '~> 0.5' # For Login UI
+pod 'FirebaseUI', '~> 0.5' # For Login UI
 
 pod 'Fabric'
 pod 'TwitterKit'
@@ -23,11 +23,11 @@ pod 'TwitterCore'
 pod 'FBSDKLoginKit'
 end
 
-target 'CopeTests' do
+#target 'CopeTests' do
 
-end
+#end
 
-target 'CopeUITests' do
+#target 'CopeUITests' do
 
-end
+#end
 
