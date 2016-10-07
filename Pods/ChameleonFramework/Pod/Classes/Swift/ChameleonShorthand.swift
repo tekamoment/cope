@@ -50,7 +50,7 @@ public func ComplementaryFlatColorOf(_ color: UIColor) -> UIColor {
  - returns: A flat UIColor object in the HSB colorspace.
  */
 public func RandomFlatColorWithShade(_ shade: UIShadeStyle) -> UIColor {
-    return UIColor(randomFlatColorOf: shade)
+	return UIColor(randomFlatColorOf: shade)
 }
 
 /**
@@ -90,7 +90,7 @@ public func HexColor(_ hexString: String, _ alpha: CGFloat = 1.0) -> UIColor {
  - returns: A flat UIColor object in the HSB colorspace.
  */
 public func AverageColorFromImage(_ image: UIImage) -> UIColor {
-    return UIColor(averageColorFrom: image)
+	return UIColor(averageColorFrom: image)
 }
 
 // MARK: - Array Methods Shorthand
@@ -107,7 +107,7 @@ Generates and creates an array of 5 color objects in the HSB colorspace from the
 - returns: An array of 5 color objects in the HSB colorspace.
 */
 public func ColorSchemeOf(_ colorSchemeType:ColorScheme, color:UIColor, isFlatScheme:Bool) -> [UIColor] {
-    return NSArray(ofColorsWith: colorSchemeType, using: color, withFlatScheme: isFlatScheme) as! [UIColor]
+	return NSArray(ofColorsWith: colorSchemeType, using: color, withFlatScheme: isFlatScheme) as! [UIColor]
 }
 
 /**
@@ -120,7 +120,7 @@ Generates and creates an array of 5 color objects in the HSB colorspace that app
 */
 public func ColorsFromImage(_ image: UIImage, withFlatScheme: Bool) -> [UIColor] {
     // TODO: Remove forced casting
-    return NSArray(ofColorsFrom: image, withFlatScheme: withFlatScheme) as! [UIColor]
+	return NSArray(ofColorsFrom: image, withFlatScheme: withFlatScheme) as! [UIColor]
 }
 
 

@@ -103,7 +103,7 @@ PODS:
     - TwitterCore (= 2.5.0)
 
 DEPENDENCIES:
-  - ChameleonFramework/Swift
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`, branch `swift3`)
   - Charts (from `https://github.com/danielgindi/Charts.git`)
   - Eureka (from `https://github.com/xmartlabs/Eureka.git`)
   - Fabric
@@ -120,6 +120,9 @@ DEPENDENCIES:
   - TwitterKit
 
 EXTERNAL SOURCES:
+  ChameleonFramework:
+    :branch: swift3
+    :git: https://github.com/ViccAlexander/Chameleon.git
   Charts:
     :git: https://github.com/danielgindi/Charts.git
   Eureka:
@@ -134,6 +137,9 @@ EXTERNAL SOURCES:
     :git: https://github.com/xhacker/TagListView.git
 
 CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: c400c32eead1c6e74008983c3e7c845ae069b41d
+    :git: https://github.com/ViccAlexander/Chameleon.git
   Charts:
     :commit: 61d10babaebd59aa24e8afe3de90f0a685284fcf
     :git: https://github.com/danielgindi/Charts.git
@@ -180,6 +186,6 @@ SPEC CHECKSUMS:
   TwitterCore: 95c46af93112768a7983bd370d66023553601d01
   TwitterKit: dd8042698b0ff5bd3066fa919b3b2b50d8eed829
 
-PODFILE CHECKSUM: 30e7beed0221c96cf38803df79031d225d81d73b
+PODFILE CHECKSUM: 0c4432e2ec370853028b1b0dafa964c1a9429209
 
 COCOAPODS: 1.1.0.rc.2
