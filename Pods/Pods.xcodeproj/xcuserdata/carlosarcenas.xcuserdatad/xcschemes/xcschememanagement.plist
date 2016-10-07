@@ -59,11 +59,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SDWebImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>TagListView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
