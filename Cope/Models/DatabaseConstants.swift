@@ -13,6 +13,12 @@ struct DatabaseConstants {
     static let surveyData = "survey-data"
     static let medications = "medications"
     static let users = "users"
+    static let lastSurvey = "last-survey"
+    static let surveyTimeStorageFormat = "yyyy-MM-dd'T'HH:mmZZZZZ"
+    
+    static func userDataDatabaseReference(userID: String) -> FIRDatabaseReference {
+        return FIRDatabase.database().reference().child(DatabaseConstants.users).child(userID)
+    }
     
     static func fetchDataForMonth(userID: String, year: Int, month: Int, completion: @escaping (_: FIRDataSnapshot) -> Void) {
         FIRDatabase.database().reference().child(DatabaseConstants.users).child(userID).child(DatabaseConstants.surveyData).child(String(year)).child(String(month)).observeSingleEvent(of: .value) { (snapshot) in
@@ -33,4 +39,11 @@ struct DatabaseConstants {
         }
     }
     
+    static func userID() -> String {
+        return "tester"
+    }
+    
+    static func lengthOfTestIntervalInHours() -> Double {
+        return 6.0
+    }
 }

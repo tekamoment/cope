@@ -17,6 +17,9 @@ class SymptomsViewController: UIViewController, SurveyViewControllerDelegate {
     let surveyData = DatabaseConstants.surveyData
     var todayDataRef: FIRDatabaseReference?
     
+    // NEW setup
+    let surveyTimeDateFormatter = DateFormatter()
+    
     var resultsData: [String: (String, Float)]?
     
     override func viewDidLoad() {
@@ -24,24 +27,32 @@ class SymptomsViewController: UIViewController, SurveyViewControllerDelegate {
 
         self.tabBarController!.title = NSLocalizedString("symptoms", comment: "Symptoms")
         
-        // deconstruct device day
-        let today = Date()
-        let usedCalendar = Calendar(identifier: .gregorian)
-        let dateComponents = (usedCalendar as NSCalendar).components([.year, .month, .day], from: today)
+        // NEW setup
+        todayDataRef = DatabaseConstants.userDataDatabaseReference(userID: DatabaseConstants.userID()).child(DatabaseConstants.lastSurvey)
         
-        // send over to firebase
-        todayDataRef = FIRDatabase.database().reference().child("users").child(userID).child(surveyData).child(String(describing: dateComponents.year!)).child(String(describing: dateComponents.month!)).child(String(describing: dateComponents.day!))
+        let usedLocale = Locale(identifier: "en_US_POSIX")
+        surveyTimeDateFormatter.locale = usedLocale
+        surveyTimeDateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        surveyTimeDateFormatter.dateFormat = DatabaseConstants.surveyTimeStorageFormat
+        
         // Do any additional setup after loading the view.
     }
 
     override func viewDidAppear(_ animated: Bool) {
         self.tabBarController!.title = NSLocalizedString("symptoms", comment: "Symptoms")
-        todayDataRef!.observe(FIRDataEventType.value) { (snapshot : FIRDataSnapshot) in
+
+        todayDataRef!.observe(FIRDataEventType.value) { (snapshot: FIRDataSnapshot) in
             if snapshot.exists() {
-                self.checkInButton.isHidden = true
-                self.greetingLabel.text = "Thanks for checking in!"
+                // deduct data
+                let lastTestTime = self.surveyTimeDateFormatter.date(from: snapshot.value as! String)!
+                if lastTestTime.timeIntervalSinceNow > Double(-60 * 60 * DatabaseConstants.lengthOfTestIntervalInHours()) {
+                    // not enough time has passed.
+                    self.checkInButton.isHidden = true
+                    self.greetingLabel.text = "Thanks for checking in!"
+                }
             } else {
-                debugPrint("This day doesn't exist.")
+                // allow survey
+                debugPrint("The user has no last-survey data point yet.")
             }
         }
         
@@ -68,18 +79,18 @@ class SymptomsViewController: UIViewController, SurveyViewControllerDelegate {
         resultsData = withResults
         print(resultsData)
         var weightedAverage = 0.0
+        
+        let surveyFinishTime = surveyTimeDateFormatter.string(from: Date())
+        let surveyDataRef = DatabaseConstants.userDataDatabaseReference(userID: DatabaseConstants.userID()).child(DatabaseConstants.surveyData).child(surveyFinishTime)
+        
         for (category, answer) in withResults {
-            todayDataRef!.child(category).setValue(answer.0)
+            surveyDataRef.child(category).setValue(answer.0)
             weightedAverage = weightedAverage + Double(answer.1)
         }
         weightedAverage = weightedAverage / Double(withResults.count)
-        todayDataRef!.child("score").setValue(weightedAverage)
-        // include timestamp
+        surveyDataRef.child("score").setValue(weightedAverage)
         
-        // send over to firebase
-        // set value on data ref
-        
-
+        todayDataRef!.setValue(surveyFinishTime)
     }
 
     /*

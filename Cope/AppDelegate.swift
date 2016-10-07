@@ -38,12 +38,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             if let user = user {
                 // User is signed in.
+                FIRDatabase.database().persistenceEnabled = true 
                 print("User is \(user).")
             } else {
                 // No user is signed in.
                 print("No user has signed in.")
             }
         }
+        
+        
         return true
     }
 
