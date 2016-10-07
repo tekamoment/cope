@@ -420,6 +420,7 @@ open class FormViewController : UIViewController, FormViewControllerProtocol {
     public var form : Form {
         get { return _form }
         set {
+            guard form !== newValue else { return }
             _form.delegate = nil
             tableView?.endEditing(false)
             _form = newValue
@@ -547,7 +548,7 @@ open class FormViewController : UIViewController, FormViewControllerProtocol {
     public final func beginEditing<T:Equatable>(of cell: Cell<T>) {
         cell.row.isHighlighted = true
         cell.row.updateCell()
-        RowDefaults.onCellHighlightChanged["\(type(of: self))"]?(cell, cell.row)
+        RowDefaults.onCellHighlightChanged["\(type(of: cell.row!))"]?(cell, cell.row)
         cell.row.callbackOnCellHighlightChanged?()
         guard let _ = tableView, (form.inlineRowHideOptions ?? Form.defaultInlineRowHideOptions).contains(.FirstResponderChanges) else { return }
         let row = cell.baseRow
