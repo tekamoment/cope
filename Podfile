@@ -11,6 +11,7 @@ pod 'Charts', :git => "https://github.com/danielgindi/Charts.git" # for the char
 pod 'Eureka', :git => 'https://github.com/xmartlabs/Eureka.git' # , :branch => 'Swift3' # for the forms
 pod 'TagListView', :git => "https://github.com/xhacker/TagListView.git", :branch => 'master' # for the "Taken on Times" cell
 pod 'ChameleonFramework/Swift' # for colour management
+pod 'Firebase'
 pod 'Firebase/Core' # Core firebase
 pod 'Firebase/Database' # Firebase Real-time Database
 pod 'Firebase/Auth' # Firebase Authentication
