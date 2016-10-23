@@ -12,10 +12,10 @@ PODS:
     - Charts/Core (= 3.0.0)
   - Charts/Core (3.0.0)
   - Eureka (2.0.0-beta.1)
-  - Fabric (1.6.9)
-  - FBSDKCoreKit (4.16.0):
+  - Fabric (1.6.10)
+  - FBSDKCoreKit (4.16.1):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.16.0):
+  - FBSDKLoginKit (4.16.1):
     - FBSDKCoreKit
   - Firebase (3.7.1):
     - Firebase/Core (= 3.7.1)
@@ -49,29 +49,29 @@ PODS:
   - FirebaseStorage (1.0.3):
     - FirebaseAnalytics (~> 3.3)
     - GoogleNetworkingUtilities (~> 1.2)
-  - FirebaseUI (0.6.0):
-    - FirebaseUI/All (= 0.6.0)
-  - FirebaseUI/All (0.6.0):
+  - FirebaseUI (0.6.2):
+    - FirebaseUI/All (= 0.6.2)
+  - FirebaseUI/All (0.6.2):
     - FirebaseUI/Auth
     - FirebaseUI/Database
     - FirebaseUI/Facebook
     - FirebaseUI/Google
     - FirebaseUI/Storage
     - FirebaseUI/Twitter
-  - FirebaseUI/Auth (0.6.0):
+  - FirebaseUI/Auth (0.6.2):
     - Firebase/Auth
-  - FirebaseUI/Database (0.6.0):
+  - FirebaseUI/Database (0.6.2):
     - Firebase/Database
-  - FirebaseUI/Facebook (0.6.0):
+  - FirebaseUI/Facebook (0.6.2):
     - FBSDKLoginKit (~> 4.0)
     - FirebaseUI/Auth
-  - FirebaseUI/Google (0.6.0):
+  - FirebaseUI/Google (0.6.2):
     - FirebaseUI/Auth
     - GoogleSignIn (~> 4.0)
-  - FirebaseUI/Storage (0.6.0):
+  - FirebaseUI/Storage (0.6.2):
     - Firebase/Storage
     - SDWebImage
-  - FirebaseUI/Twitter (0.6.0):
+  - FirebaseUI/Twitter (0.6.2):
     - FirebaseUI/Auth
     - TwitterKit (~> 2.4)
   - GoogleAppUtilities (1.1.2):
@@ -91,12 +91,12 @@ PODS:
   - GoogleSymbolUtilities (1.1.2)
   - GoogleUtilities (1.3.2):
     - GoogleSymbolUtilities (~> 1.1)
-  - JTAppleCalendar (5.0.1)
+  - JTAppleCalendar (6.0.0)
   - KCFloatingActionButton (2.1.1)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - TagListView (1.0.0)
+  - TagListView (1.1.0)
   - TwitterCore (2.5.0):
     - Fabric
   - TwitterKit (2.5.0):
@@ -113,7 +113,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - FirebaseUI (~> 0.5)
-  - JTAppleCalendar (from `https://github.com/patchthecode/JTAppleCalendar.git`, branch `updatedSwift3`)
+  - JTAppleCalendar (from `https://github.com/patchthecode/JTAppleCalendar.git`)
   - KCFloatingActionButton (from `https://github.com/kciter/KCFloatingActionButton.git`)
   - TagListView (from `https://github.com/xhacker/TagListView.git`, branch `master`)
   - TwitterCore
@@ -128,7 +128,6 @@ EXTERNAL SOURCES:
   Eureka:
     :git: https://github.com/xmartlabs/Eureka.git
   JTAppleCalendar:
-    :branch: updatedSwift3
     :git: https://github.com/patchthecode/JTAppleCalendar.git
   KCFloatingActionButton:
     :git: https://github.com/kciter/KCFloatingActionButton.git
@@ -141,19 +140,19 @@ CHECKOUT OPTIONS:
     :commit: c400c32eead1c6e74008983c3e7c845ae069b41d
     :git: https://github.com/ViccAlexander/Chameleon.git
   Charts:
-    :commit: 61d10babaebd59aa24e8afe3de90f0a685284fcf
+    :commit: 8ef870a6fa21ba585236096ac0ddc71d12d16204
     :git: https://github.com/danielgindi/Charts.git
   Eureka:
-    :commit: 6d3959d88dd9c67db6054a43f121987fb8b18331
+    :commit: d5232163a8be8342b88360c2e6d9cf3d294b039d
     :git: https://github.com/xmartlabs/Eureka.git
   JTAppleCalendar:
-    :commit: 87d164c928c7296a31523208c09f51d33e74b118
+    :commit: ff34617505b5b9a3101a69aef95165e66d580040
     :git: https://github.com/patchthecode/JTAppleCalendar.git
   KCFloatingActionButton:
     :commit: 93544f98333b06bf81226b32524d39e4a61d8ad1
     :git: https://github.com/kciter/KCFloatingActionButton.git
   TagListView:
-    :commit: 2f3bf75443d69ccf4ef38f853cf327ebd5c6dd2c
+    :commit: c060ba52090f8baebbf0904a26aa7397e137484d
     :git: https://github.com/xhacker/TagListView.git
 
 SPEC CHECKSUMS:
@@ -161,9 +160,9 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Charts: 3f0da988b104c8e5f069fcef55da699f597dac67
   Eureka: d014adf16406745e1a78d5790ea37ed130a0a8e5
-  Fabric: bc5bec42cef4bcf1ee3ce0e218fc518e4b44dfbb
-  FBSDKCoreKit: 7a6baaed4a2b2a244ba253346713bdbc74df135b
-  FBSDKLoginKit: 9a514a55a7d05190f64d4ef09502737588b5b561
+  Fabric: c73f371ee543e3f0b80608f2674750e4910d1669
+  FBSDKCoreKit: 6feac4e8921ccd7afa83fb1df6291dc6eec42c7c
+  FBSDKLoginKit: 469a56cebe2e1ed62b1621d0b155970fd6aac2d8
   Firebase: be473484f0d515e72ffd04acf22f981773c23e58
   FirebaseAnalytics: 0533a00b681e08fd0b2cd0444b7ddf0ef9fd7a1a
   FirebaseAuth: 75a062bbf2d3c97d1e6e55bbc110e13a6853e25d
@@ -171,7 +170,7 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 750a4a0fe18ef114318876fd654b2d9c671e0992
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
   FirebaseStorage: 3992817bf405f5c1a4f8349678d22724cd0ef509
-  FirebaseUI: 350cc9db1eb21a7d723911a79d6e01d95579d07d
+  FirebaseUI: c6579dbd268ff63e07e308626ff818708d7c6160
   GoogleAppUtilities: a8a552aa74f6597f805e45b5a3962766c3134973
   GoogleAuthUtilities: ccad2e0a9284699973ff57c0dd24c3893657fda4
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
@@ -179,13 +178,13 @@ SPEC CHECKSUMS:
   GoogleSignIn: 09036ed61f8e75f1424100d63f7719480b2428c3
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
-  JTAppleCalendar: cb2417b1f3367d1993e31720a663646742139a5c
+  JTAppleCalendar: 374d7d6309b4c40a41be4167fe4cc3b935831da1
   KCFloatingActionButton: 084cfe9d16b741be33393c99757f5967296c7645
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  TagListView: 6bf4bded034c4c90b1e90d8cd3d8e1d852dba0a8
+  TagListView: 8294e9e860ca59c94f226243ce3aadf8c44add1c
   TwitterCore: 95c46af93112768a7983bd370d66023553601d01
   TwitterKit: dd8042698b0ff5bd3066fa919b3b2b50d8eed829
 
-PODFILE CHECKSUM: 0c4432e2ec370853028b1b0dafa964c1a9429209
+PODFILE CHECKSUM: f202fdf2ce140ef75ea0b22963c83304e166c549
 
 COCOAPODS: 1.1.0.rc.2

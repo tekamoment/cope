@@ -16,6 +16,7 @@ struct DatabaseConstants {
     static let lastSurvey = "last-survey"
     static let surveyTimeLocale = "en_US_POSIX"
     static let surveyTimeStorageFormat = "yyyy-MM-dd'T'HH:mmZZZZZ"
+    static let score = "score"
     
     static func userDataDatabaseReference(userID: String) -> FIRDatabaseReference {
         return FIRDatabase.database().reference().child(DatabaseConstants.users).child(userID)

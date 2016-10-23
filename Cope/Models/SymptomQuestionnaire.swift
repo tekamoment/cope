@@ -24,6 +24,18 @@ struct SymptomQuestion {
     }
 }
 
+struct SymptomAnswer {
+    let category: String
+    let answer: String
+    let value: Float
+}
+
+struct SurveyRecord {
+    let date: Date
+    var answers: [SymptomAnswer]?
+    let score: Double
+}
+
 enum choiceFormat {
     case Title(String, Float)
     case TitleSubtitle(String, String, Float)

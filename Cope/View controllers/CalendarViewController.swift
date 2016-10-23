@@ -23,16 +23,21 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
     @IBOutlet weak var previousMonthButton: UIButton!
     @IBOutlet weak var nextMonthButton: UIButton!
     
-    var dateFormatter: DateFormatter!
+    var monthYearLabelDateFormatter: DateFormatter!
+    var surveyRecordDateFormatter = DateFormatter()
     var requestedYear: Int!
     var requestedMonth: Int!
     var requestedDay: Int!
     
     let usedCalendar = Calendar(identifier: .gregorian)
     
+//    var requestedComponents: DateComponents!
+    var requestedDate = Date()
+    
     let userID = "tester"
     
     var requestedMonthData: NSDictionary?
+    var requestedMonthRecords = [SurveyRecord]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,23 +53,56 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         // Do any additional setup after loading the view.
         
         // set query to current month
-        dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM yyyy"
-        monthYearLabel.text = dateFormatter.string(from: Date())
+        monthYearLabelDateFormatter = DateFormatter()
+        monthYearLabelDateFormatter.dateFormat = "MMMM yyyy"
+        monthYearLabel.text = monthYearLabelDateFormatter.string(from: Date())
         
+        
+        let usedLocale = Locale(identifier: "en_US_POSIX")
+        surveyRecordDateFormatter.locale = usedLocale
+        surveyRecordDateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        surveyRecordDateFormatter.dateFormat = DatabaseConstants.surveyTimeStorageFormat
         
         // firebase fetch
-        DatabaseConstants.fetchDataForMonth(userID: userID, year: 2016, month: 10) { (snapshot) in
+//        DatabaseConstants.fetchDataForMonth(userID: userID, year: 2016, month: 10) { (snapshot) in
+//            debugPrint(snapshot)
+//            self.requestedMonthData = snapshot.value as? NSDictionary
+//            self.calendarView.reloadData()
+//        }
+//        
+        DatabaseConstants.fetchSurveyDataForMonth(userID: userID, year: 2016, month: 10) { (snapshot) in
+            print("Sourced from new fetch:")
             debugPrint(snapshot)
-            self.requestedMonthData = snapshot.value as? NSDictionary
+            
+            guard let requestedData = snapshot.value as? [String: Any] else {
+                return
+            }
+            
+            for (date, record) in requestedData {
+                let dayRecord = record as! [String: Any]
+                
+                var answers = [SymptomAnswer]()
+                var score: Double = 0.0
+                
+                for (category, answer) in dayRecord {
+                    if category == DatabaseConstants.score {
+                        score = answer as! Double
+                        continue
+                    }
+                    
+                    answers.append(SymptomAnswer(category: category, answer: answer as! String, value: 0.0))
+                }
+                
+                self.requestedMonthRecords.append(SurveyRecord(date: self.surveyRecordDateFormatter.date(from: date)!, answers: answers, score: score))
+            }
+            debugPrint(self.requestedMonthRecords)
             self.calendarView.reloadData()
         }
-        
-        calendarView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.tabBarController!.title = NSLocalizedString("calendar", comment: "Calendar")
+        view.layoutSubviews()
     }
 
 
@@ -96,33 +134,53 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         let dayCell = cell as! DayCellView
         
         dayCell.setupCellBeforeDisplay(cellState, date: date)
+        dayCell.surveyScoreIndicatorView.backgroundColor = UIColor.clear
         
         // apply score colors here
         
         dayCell.backgroundColor = UIColor(hexString: "#FCFCFC")
         if cellState.dateBelongsTo == .thisMonth{
-            let dayComponent = (usedCalendar as NSCalendar).components([.day], from: date)
-            
-            // do an if let
-            guard requestedMonthData != nil, let dayData = requestedMonthData!["\(dayComponent.day!)"] as? NSDictionary, let score = dayData["score"] as? Double else {
+            guard requestedMonthRecords.count > 0 else {
                 return
             }
             
+            let startAndEndOfDay = self.generateStartAndEndOfDayFor(date: date)
+            let startDate = startAndEndOfDay.0
+            let endDate = startAndEndOfDay.1
+            
+            let dayRecords = requestedMonthRecords.filter({ (record) -> Bool in
+                let recordDate = record.date
+                return startDate.compare(recordDate).rawValue * recordDate.compare(endDate).rawValue >= 0
+            })
+            
+            guard dayRecords.count > 0 else {
+                return
+            }
+            
+            print("RECORDS FOR DAY")
+            debugPrint(dayRecords)
+            
             dayCell.dayLabel.textColor = dayCell.dayHasDataColor
             
-            if score < 1.5 {
-                dayCell.backgroundColor = dayCell.veryLowColor
-            } else if score < 2 {
-                dayCell.backgroundColor = dayCell.lowColor
-            } else if score < 2.5 {
-                dayCell.backgroundColor = dayCell.lowAverageColor
-            } else if score < 3 {
-                dayCell.backgroundColor = dayCell.averageColor
-            } else if score < 3.5 {
-                dayCell.backgroundColor = dayCell.goodColor
-            } else {
-                dayCell.backgroundColor = dayCell.veryGoodColor
+            var colors = [UIColor]()
+            for record in dayRecords {
+                let score = record.score
+                if score < 1.5 {
+                    colors.append(dayCell.veryLowColor!)
+                } else if score < 2 {
+                    colors.append(dayCell.lowColor!)
+                } else if score < 2.5 {
+                    colors.append(dayCell.lowAverageColor!)
+                } else if score < 3 {
+                    colors.append(dayCell.averageColor!)
+                } else if score < 3.5 {
+                    colors.append(dayCell.goodColor!)
+                } else {
+                    colors.append(dayCell.veryGoodColor!)
+                }
             }
+            
+            dayCell.surveyScoreIndicatorView.colors = colors
         }
         
     }
@@ -149,16 +207,16 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         // set data displayed
         
         // refactor check out to own function
-        let dayComponent = (usedCalendar as NSCalendar).components([.day], from: date)
-        
-        guard requestedMonthData != nil, let dayData = requestedMonthData!["\(dayComponent.day!)"] as? NSDictionary, let score = dayData["score"] as? Double else {
-            wellnessScoreLabel.text = "You do not have data for this day."
-            return
-        }
-        
-        // FORMAT DATES CORRECTLY ACCORDING TO INTERNATIONALIZATION
-        wellnessScoreLabel.text = "Your wellness score for this day is \(score)."
-        summaryLabel.text = "You had \(NSLocalizedString(dayData["sleepCategory"] as! String, comment:"Hours of sleep a user had")) of sleep, were \(NSLocalizedString(dayData["emotionCategory"] as! String, comment:"User's emotion"))"
+//        let dayComponent = (usedCalendar as NSCalendar).components([.day], from: date)
+//        
+//        guard requestedMonthData != nil, let dayData = requestedMonthData!["\(dayComponent.day!)"] as? NSDictionary, let score = dayData["score"] as? Double else {
+//            wellnessScoreLabel.text = "You do not have data for this day."
+//            return
+//        }
+//        
+//        // FORMAT DATES CORRECTLY ACCORDING TO INTERNATIONALIZATION
+//        wellnessScoreLabel.text = "Your wellness score for this day is \(score)."
+//        summaryLabel.text = "You had \(NSLocalizedString(dayData["sleepCategory"] as! String, comment:"Hours of sleep a user had")) of sleep, were \(NSLocalizedString(dayData["emotionCategory"] as! String, comment:"User's emotion"))"
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
@@ -168,12 +226,42 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
     
     @IBAction func previousMonthPressed(_ sender: AnyObject) {
         // decrement month
-        calendarView.reloadData()
+        requestNewMonth(direction: .backward)
     }
 
     @IBAction func nextMonthPressed(_ sender: AnyObject) {
         // increment month
+        requestNewMonth(direction: .forward)
+    }
+    
+    func requestNewMonth(direction: Direction) {
+        var addComponents = DateComponents()
+        
+        switch direction {
+        case .forward:
+            addComponents.month = 1
+            addComponents.day = -1
+        
+        case .backward: break
+        }
+        
+        requestedDate = usedCalendar.date(byAdding: addComponents, to: requestedDate)!
+        
         calendarView.reloadData()
+        monthYearLabel.text = monthYearLabelDateFormatter.string(from: requestedDate)
+    }
+    
+    func generateStartAndEndOfDayFor(date: Date) -> (Date, Date) {
+        var components = usedCalendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        components.hour = 00
+        components.minute = 00
+        components.second = 00
+        let startDate = usedCalendar.date(from: components)!
+        components.hour = 23
+        components.minute = 59
+        components.second = 59
+        let endDate = usedCalendar.date(from: components)!
+        return (startDate, endDate)
     }
     
     /*
@@ -185,5 +273,10 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         // Pass the selected object to the new view controller.
     }
     */
+    
+}
 
+enum Direction {
+    case forward;
+    case backward
 }

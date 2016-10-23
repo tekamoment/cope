@@ -13,7 +13,7 @@ class DayCellView: JTAppleDayCellView {
     
     @IBOutlet weak var dayLabel: UILabel!
     var normalDayColor = UIColor.black
-    var dayHasDataColor = UIColor.white
+    var dayHasDataColor = UIColor.darkGray
     var outOfMonthColor = UIColor(red: 0.796, green: 0.796, blue: 0.796, alpha: 1)
     
     var veryLowColor = UIColor(hexString: "921717")
@@ -24,7 +24,9 @@ class DayCellView: JTAppleDayCellView {
     var veryGoodColor = UIColor(hexString: "7ED321")
     
     var shadowLayer: CALayer!
-
+    
+    @IBOutlet weak var surveyScoreIndicatorView: SurveyScoreIndicatorView!
+    
     
     func setupCellBeforeDisplay(_ cellState: CellState, date: Date) {
         dayLabel.text = cellState.text

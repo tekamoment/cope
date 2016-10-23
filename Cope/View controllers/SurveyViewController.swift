@@ -25,7 +25,8 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
     var surveyQuestion: SymptomQuestion?
     var currentQuestion: Int?
     
-    var results: [String: (String, Float)] = [String: (String, Float)]()
+//    var results: [String: (String, Float)] = [String: (String, Float)]()
+    var answers: [SymptomAnswer] = [SymptomAnswer]()
     
     var delegate: SurveyViewControllerDelegate?
 
@@ -36,9 +37,6 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
             surveyQuestion = questionnaire?.questions.first
             currentQuestion = 0
         }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-//        surveyQuestion = SurveyQuestion(questionTitle: "Your Quality of Sleep", questionSubtitle: "How long did you sleep last night?", choices: [("0-4 hours", 2), ("4-6 hours", 3), ("6-9 hours", 4), ("9 or more hours", 2)])
         
         collectionView?.delegate = self
         self.navigationItem.title = NSLocalizedString(surveyQuestion!.category, comment: "Question title for \(surveyQuestion!.category)")
@@ -81,11 +79,6 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
         case .TitleSubtitle(let title, _, _):
              cell.titleLabel.text = NSLocalizedString(title, comment: "Choice label for \(title)")
         }
-        
-//        print("\(surveyQuestion!.choices[(indexPath as NSIndexPath).item].0)")
-    
-//        cell.titleLabel.text = surveyQuestion!.choices[(indexPath as NSIndexPath).item].0
-        // Configure the cell
     
         cell.layer.masksToBounds = false
         cell.layer.shadowOpacity = 0.15
@@ -96,17 +89,11 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        switch kind {
-//        case UICollectionElementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SurveyHeaderView", for: indexPath) as! SurveyHeaderReusableView
             headerView.headerTitle.text = NSLocalizedString(surveyQuestion!.title, comment: "Question title for \(surveyQuestion!.title)")
             headerView.headerSubtitle.text = NSLocalizedString(surveyQuestion!.subtitle, comment: "Question title for \(surveyQuestion!.subtitle)")
             headerView.iconView.image = UIImage(named: surveyQuestion!.icon)!
             return headerView
-        
-//        default:
-//            assert(false, "Unexpected element kind")
-//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -125,13 +112,10 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
         
         switch chosenChoice {
         case .Title(let title, let value):
-//            results.append(category: (title, value))
-            results[surveyQuestion!.category] = (title, value)
+            answers.append(SymptomAnswer(category: surveyQuestion!.category, answer: title, value: value))
         
         case .TitleSubtitle(let title, _, let value):
-//            results.append(category: (title, value))
-            results[surveyQuestion!.category] = (title, value)
-
+            answers.append(SymptomAnswer(category: surveyQuestion!.category, answer: title, value: value))
         }
         
         if currentQuestion != questionnaire!.questions.count - 1 {
@@ -142,7 +126,7 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
             collectionView.reloadData()
         } else {
             // send data back
-            delegate?.surveyFinished(withResults: results)
+            delegate?.surveyFinished(answers: answers)
         }
         
     }
@@ -156,29 +140,9 @@ class SurveyViewController: UICollectionViewController, UICollectionViewDelegate
     }
     */
 
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
 
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
-    
-    }
-    */
 }
 
 protocol SurveyViewControllerDelegate {
-    func surveyFinished(withResults: [String: (String, Float)])
+    func surveyFinished(answers: [SymptomAnswer])
 }

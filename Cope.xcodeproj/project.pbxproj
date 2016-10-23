@@ -11,6 +11,8 @@
 		18011FA01D8C5BBA002D3B7C /* SymptomQuestionnaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18011F9F1D8C5BBA002D3B7C /* SymptomQuestionnaire.swift */; };
 		18011FA21D8C5E0F002D3B7C /* Wellness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18011FA11D8C5E0F002D3B7C /* Wellness.swift */; };
 		180761DA1D7E721900EB197A /* SummaryChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180761D91D7E721900EB197A /* SummaryChartCell.swift */; };
+		18168D501DA80E4800705438 /* DosageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18168D4F1DA80E4800705438 /* DosageCell.swift */; };
+		18168D521DAC00BD00705438 /* SurveyScoreIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18168D511DAC00BD00705438 /* SurveyScoreIndicatorView.swift */; };
 		182B4E051D9A9BA800EBCFEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 182B4E041D9A9BA800EBCFEE /* GoogleService-Info.plist */; };
 		182B4E061D9A9BA800EBCFEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 182B4E041D9A9BA800EBCFEE /* GoogleService-Info.plist */; };
 		182B4E071D9A9BA800EBCFEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 182B4E041D9A9BA800EBCFEE /* GoogleService-Info.plist */; };
@@ -62,6 +64,8 @@
 		18011F9F1D8C5BBA002D3B7C /* SymptomQuestionnaire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SymptomQuestionnaire.swift; path = Models/SymptomQuestionnaire.swift; sourceTree = "<group>"; };
 		18011FA11D8C5E0F002D3B7C /* Wellness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Wellness.swift; path = Models/Wellness.swift; sourceTree = "<group>"; };
 		180761D91D7E721900EB197A /* SummaryChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SummaryChartCell.swift; path = Views/SummaryChartCell.swift; sourceTree = "<group>"; };
+		18168D4F1DA80E4800705438 /* DosageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DosageCell.swift; path = Views/DosageCell.swift; sourceTree = "<group>"; };
+		18168D511DAC00BD00705438 /* SurveyScoreIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SurveyScoreIndicatorView.swift; path = Views/SurveyScoreIndicatorView.swift; sourceTree = "<group>"; };
 		182B4E041D9A9BA800EBCFEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		182B4E091D9ADDE200EBCFEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginScreen.storyboard; sourceTree = "<group>"; };
 		182B4E0B1D9ADDF500EBCFEE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View controllers/LoginViewController.swift"; sourceTree = "<group>"; };
@@ -140,7 +144,9 @@
 		1838B04C1D8D842800FB2E36 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				18168D511DAC00BD00705438 /* SurveyScoreIndicatorView.swift */,
 				18A454DC1D7DE727003B1190 /* DayCellView.xib */,
+				18168D4F1DA80E4800705438 /* DosageCell.swift */,
 				18A454DE1D7DE761003B1190 /* DayCellView.swift */,
 				18A454D61D7DDB7F003B1190 /* SurveyHeaderReusableView.swift */,
 				180761D91D7E721900EB197A /* SummaryChartCell.swift */,
@@ -450,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18168D501DA80E4800705438 /* DosageCell.swift in Sources */,
 				182B4E0C1D9ADDF500EBCFEE /* LoginViewController.swift in Sources */,
 				18011F9E1D8C5A33002D3B7C /* Medication.swift in Sources */,
 				18A454D51D7DD970003B1190 /* SurveyOptionCell.swift in Sources */,
@@ -468,6 +475,7 @@
 				18A454E11D7E48D1003B1190 /* CalendarViewController.swift in Sources */,
 				1860C2291D7EA73A005A636A /* AddMedicationFormViewController.swift in Sources */,
 				18A454D31D7DD1E6003B1190 /* SurveyViewController.swift in Sources */,
+				18168D521DAC00BD00705438 /* SurveyScoreIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

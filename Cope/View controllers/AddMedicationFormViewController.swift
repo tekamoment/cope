@@ -28,12 +28,18 @@ class AddMedicationFormViewController: FormViewController {
             <<< TextRow() { row in
                 row.title = "Medicine Name"
             }
+            // frequency
             <<< SwitchRow() { row in
                 row.title = "Reminder"
             }
             <<< IntRow() { row in
                 row.title = "Dosage"
                 row.placeholder = "Optional"
+            }
+            <<< PickerRow<String>() { row in
+                row.title = "Frequency"
+                row.options = ["Per Day", "Per Week", "Per Interval"]
+                row.tag = "frequency"
             }
     }
 }

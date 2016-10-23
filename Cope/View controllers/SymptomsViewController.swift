@@ -22,6 +22,8 @@ class SymptomsViewController: UIViewController, SurveyViewControllerDelegate {
     
     var resultsData: [String: (String, Float)]?
     
+    var answers: [SymptomAnswer]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -73,24 +75,27 @@ class SymptomsViewController: UIViewController, SurveyViewControllerDelegate {
         
     }
     
-    func surveyFinished(withResults: [String: (String, Float)]) {
-        // dismiss here.
+    func surveyFinished(answers: [SymptomAnswer]) {
         self.navigationController!.dismiss(animated: true, completion: nil)
-        resultsData = withResults
-        print(resultsData)
-        var weightedAverage = 0.0
+        self.answers = answers
+        debugPrint(answers)
         
+        var weightedAverage: Float = 0.0
         let surveyFinishTime = surveyTimeDateFormatter.string(from: Date())
         let surveyDataRef = DatabaseConstants.userDataDatabaseReference(userID: DatabaseConstants.userID()).child(DatabaseConstants.surveyData).child(surveyFinishTime)
         
-        for (category, answer) in withResults {
-            surveyDataRef.child(category).setValue(answer.0)
-            weightedAverage = weightedAverage + Double(answer.1)
+        
+        for answer in answers {
+            surveyDataRef.child(answer.category).setValue(answer.answer)
+            weightedAverage = weightedAverage + answer.value
         }
-        weightedAverage = weightedAverage / Double(withResults.count)
+        
+        weightedAverage = weightedAverage / Float(answers.count)
         surveyDataRef.child("score").setValue(weightedAverage)
         
         todayDataRef!.setValue(surveyFinishTime)
+        
+        //
     }
 
     /*

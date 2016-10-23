@@ -22,7 +22,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jcY-16-Opm">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="jcY-16-Opm">
                                 <rect key="frame" x="26" y="83" width="324" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -101,7 +101,7 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="SummaryHeaderView" id="fRT-PM-RD4">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SummaryHeaderView" id="fRT-PM-RD4">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
@@ -161,7 +161,7 @@
                     <tabBarItem key="tabBarItem" title="Medication" image="medication" id="8yD-gx-Cfu"/>
                     <connections>
                         <outlet property="tableView" destination="dOj-dw-Noo" id="OQW-dC-xFp"/>
-                        <segue destination="U9w-Q8-soZ" kind="show" id="Z7e-K5-TDL"/>
+                        <segue destination="U9w-Q8-soZ" kind="show" identifier="showMedicationDetail" id="Z7e-K5-TDL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7XF-h1-xWA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,11 +181,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bsr-ge-tb0">
-                                <frame key="frameInset" minX="131" minY="256" width="107" height="42"/>
+                                <frame key="frameInset" minX="131" minY="256" width="106" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r4i-pH-jd7">
-                                        <frame key="frameInset" width="107" height="21"/>
+                                        <frame key="frameInset" width="106" height="21"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Robitusin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uti-UE-ZEo">
                                                 <frame key="frameInset" width="72" height="21"/>
@@ -202,7 +202,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="12:00PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxr-0Q-cSq">
-                                        <frame key="frameInset" minX="20" minY="21" width="68" height="21"/>
+                                        <frame key="frameInset" minX="19" minY="21" width="68" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -226,7 +226,7 @@
         <scene sceneID="SGq-vm-gMg">
             <objects>
                 <collectionViewController storyboardIdentifier="surveyViewController" id="TKq-ie-f2y" customClass="SurveyViewController" customModule="Cope" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" id="IwS-JX-DHR">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" dataMode="prototypes" id="IwS-JX-DHR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -362,7 +362,7 @@
         <scene sceneID="beI-zf-hhI">
             <objects>
                 <navigationController id="o1L-WG-CBA" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Aq-d8-hUR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2Aq-d8-hUR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -460,30 +460,11 @@
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="y1J-Vm-j6p" firstAttribute="leading" secondItem="Zqd-a0-Uyb" secondAttribute="leading" id="COC-QX-9kM"/>
                                             <constraint firstAttribute="trailing" secondItem="R2J-or-3QA" secondAttribute="trailing" id="FIR-z5-XFJ"/>
                                             <constraint firstItem="R2J-or-3QA" firstAttribute="leading" secondItem="Zqd-a0-Uyb" secondAttribute="leading" id="IDK-aJ-Vay"/>
-                                            <constraint firstAttribute="trailing" secondItem="y1J-Vm-j6p" secondAttribute="trailing" id="zc2-oV-7xU"/>
+                                            <constraint firstItem="y1J-Vm-j6p" firstAttribute="top" secondItem="Zqd-a0-Uyb" secondAttribute="top" constant="53" id="QSB-hZ-3wk"/>
+                                            <constraint firstItem="y1J-Vm-j6p" firstAttribute="trailing" secondItem="R2J-or-3QA" secondAttribute="trailing" id="YyO-CM-elL"/>
                                         </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZeW-hB-orY">
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your wellness score" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dje-9q-DZn">
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <color key="textColor" red="0.29411764705882354" green="0.39215686274509803" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuI-7I-ajb">
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.59999999999999998" green="0.63137254901960782" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdM-xv-m75">
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.5725490196078431" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -491,8 +472,6 @@
                         <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="a4C-ER-sO1" firstAttribute="centerX" secondItem="Bf3-Rz-s22" secondAttribute="centerX" id="DCK-9j-86s"/>
-                            <constraint firstItem="y1J-Vm-j6p" firstAttribute="leading" secondItem="Bf3-Rz-s22" secondAttribute="leadingMargin" constant="-8" id="PZd-6z-cED"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="y1J-Vm-j6p" secondAttribute="trailing" constant="-8" id="SdF-Bo-WWc"/>
                             <constraint firstItem="a4C-ER-sO1" firstAttribute="leading" secondItem="Bf3-Rz-s22" secondAttribute="leadingMargin" constant="-8" id="YVZ-Hw-PfT"/>
                             <constraint firstItem="T9i-Jj-6Dr" firstAttribute="top" secondItem="a4C-ER-sO1" secondAttribute="bottom" id="nuF-qx-Ryl"/>
                             <constraint firstItem="a4C-ER-sO1" firstAttribute="top" secondItem="6de-xq-Kie" secondAttribute="bottom" constant="8" symbolic="YES" id="xGS-Du-11y"/>
@@ -504,9 +483,6 @@
                         <outlet property="monthYearLabel" destination="BiH-4D-KbG" id="0Iu-Qk-zxG"/>
                         <outlet property="nextMonthButton" destination="t9C-2B-0Ui" id="3VN-09-03x"/>
                         <outlet property="previousMonthButton" destination="xeB-wr-s4X" id="tFq-hM-Sp4"/>
-                        <outlet property="reccommendationLabel" destination="pdM-xv-m75" id="gRs-Qp-9eB"/>
-                        <outlet property="summaryLabel" destination="BuI-7I-ajb" id="EcJ-q4-EJ9"/>
-                        <outlet property="wellnessScoreLabel" destination="Dje-9q-DZn" id="1Zp-38-sM5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0M-cg-udz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -539,7 +515,7 @@
         <scene sceneID="c14-jW-hNr">
             <objects>
                 <navigationController storyboardIdentifier="mainScene" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JGV-rC-GcF" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cgh-uM-vt6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cgh-uM-vt6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

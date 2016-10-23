@@ -14,3 +14,20 @@ struct Medication {
     var dosage: String?
     // time.
 }
+
+
+struct Dosage {
+    let quantity: Int
+}
+
+extension Dosage: Hashable {
+    var hashValue: Int {
+        return quantity.hashValue
+    }
+}
+
+extension Dosage: Equatable {
+    static func ==(lhs: Dosage, rhs: Dosage) -> Bool {
+        return lhs.quantity == rhs.quantity
+    }
+}

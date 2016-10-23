@@ -97,7 +97,7 @@ For example, a `SwitchRow` holds a `Bool` value, while a `TextRow` holds a `Stri
 
 ```swift
 // Get the value of a single row
-let row: TextRow? = form.rowByTag("MyRowTag")
+let row: TextRow? = form.rowBy(tag: "MyRowTag")
 let value = row.value
 
 // Get the value of all rows which have a Tag assigned
@@ -289,7 +289,7 @@ form +++ Section()
             <<< LabelRow(){
 
                 $0.hidden = Condition.function(["switchRowTag"], { form in
-                    return !((form.rowByTag("switchRowTag") as? SwitchRow)?.value ?? false)
+                    return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
                 })
                 $0.title = "Switch is on!"
         }
@@ -343,10 +343,10 @@ Note that if you want to disable a row permanently you can also set `disabled` v
 ### List Sections
 
 To display a list of options, Eureka includes a special section called `SelectableSection`.
-When creating one you need to pass the type of row to use in the options and the `selectionStyle`. The `selectionStyle` is an enum which can be either `MultipleSelection` or `SingleSelection(enableDeselection: Bool)` where the `enableDeselection` parameter determines if the selected rows can be deselected or not.
+When creating one you need to pass the type of row to use in the options and the `selectionStyle`. The `selectionStyle` is an enum which can be either `multipleSelection` or `singleSelection(enableDeselection: Bool)` where the `enableDeselection` parameter determines if the selected rows can be deselected or not.
 
 ```swift
-form +++ SelectableSection<ListCheckRow<String>, String>("Where do you live", selectionType: .SingleSelection(enableDeselection: true))
+form +++ SelectableSection<ListCheckRow<String>>("Where do you live", selectionType: .singleSelection(enableDeselection: true))
 
 let continents = ["Africa", "Antarctica", "Asia", "Australia", "Europe", "North America", "South America"]
 for option in continents {
@@ -435,8 +435,8 @@ Sometimes the collection of rules we want to use on a row is the same we want to
 
 ```swift
 var rules = RuleSet<String>()
-ruleSet.add(rule: RuleRequired())
-ruleSet.add(rule: RuleEmail())
+rules.add(rule: RuleRequired())
+rules.add(rule: RuleEmail())
 
 let row = TextRow() {
             $0.title = "Email Rule"
@@ -570,12 +570,24 @@ You can place your own UIViewController instead of `SelectorViewController<T>` a
 ### Subclassing cells using the same row
 
 Sometimes we want to change the UI look of one of our rows but without changing the row type and all the logic associated to one row.
-There is currently one way to do this if you are using cells that are instantiated from nib files.
+There is currently one way to do this **if you are using cells that are instantiated from nib files**. Currently, none of Eureka's core rows are instantiated from nib files but some of the custom rows in [EurekaCommunity] are, in particular the [PostalAddressRow](https://github.com/EurekaCommunity/PostalAddressRow) which was moved there.
 
-What you have to do is define a subclass and a nibfile with a cell of that subclass type. This will create a row with that cell.
+What you have to do is:
+* Create a nib file containing the cell you want to create.
+* Then set the class of the cell to be the existing cell you want to modify (if you want to change something more apart from pure UI then you should subclass that cell). Make sure the module of that class is correctly set
+* Connect the outlets to your class
+* Tell your row to use the new nib file. This is done by setting the `cellProvider` variable to use this nib. You should do this in the initialiser, either in each concrete instantiation or using the `defaultRowInitializer`. For example:
+
+```swift
+<<< PostalAddressRow() {
+     $0.cellProvider = CellProvider<PostalAddressCell>(nibName: "CustomNib", bundle: Bundle.main)
+}
+```
+
+You could also create a new row for this. In that case try to inherit from the same superclass as the row you want to change to inherit its logic.
 
 There are some things to consider when you do this:
-* Your subclass has to implement the init methods of its subclass, specially `init?(coder aDecoder: NSCoder)`.
+* If you want to see an example have a look at the [PostalAddressRow](https://github.com/EurekaCommunity/PostalAddressRow) or the [CreditCardRow](https://github.com/EurekaCommunity/CreditCardRow) which have use a custom nib file in their examples.
 * If you get an error saying `Unknown class <YOUR_CLASS_NAME> in Interface Builder file`, it might be that you have to instantiate that new type somewhere in your code to load it in the runtime. Calling `let t = YourClass.self` helped in my case.
 
 
@@ -772,7 +784,9 @@ Let us know about it, we would be glad to mention it here. :)
 
 #### CocoaPods
 
-[CocoaPods](https://cocoapods.org/) is a dependency manager for Cocoa projects.
+[CocoaPods](https://cocoapods.org/) is a dependency manager for Cocoa projects. 
+
+**Cocoapods 1.1.0.rc.3 or newer version must be used.**
 
 Specify Eureka into your project's `Podfile`:
 
@@ -781,7 +795,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 use_frameworks!
 
-pod 'Eureka', '~> 2.0'
+pod 'Eureka', '~> 2.0.0-beta.1'
 ```
 
 Then run the following command:
@@ -797,7 +811,7 @@ $ pod install
 Specify Eureka into your project's `Cartfile`:
 
 ```ogdl
-github "xmartlabs/Eureka" ~> 2.0
+github "xmartlabs/Eureka" ~> 2.0.0
 ```
 
 #### Manually as Embedded Framework

@@ -52,35 +52,50 @@ class SummaryCollectionViewController: UICollectionViewController {
 
         let weekAgo = (usedCalendar as NSCalendar).date(byAdding: .weekOfYear, value: -1, to: today, options: .wrapComponents)
         
-        
-        let fmt = DateFormatter()
-        fmt.dateFormat = "dd/MM/yyyy"
-        
-        var evaluatedDate = weekAgo!
-        while evaluatedDate.compare(today) != .orderedSame {
-            print(fmt.string(from: evaluatedDate))
-            evaluatedDate = usedCalendar.date(byAdding: .day, value: 1, to: evaluatedDate)!
-            let evaluatedDateComponents = (usedCalendar as NSCalendar).components([.year, .month, .day], from: evaluatedDate)
-            DatabaseConstants.fetchDataForDate(userID: userID, year: evaluatedDateComponents.year!, month: evaluatedDateComponents.month!, day: evaluatedDateComponents.day!, completion: { (snapshot) in
-                debugPrint(snapshot)
+        DatabaseConstants.fetchSurveyDataForTimePeriod(userID: userID, start: weekAgo!, end: today) { (snapshot) in
+            guard let requestedData = snapshot.value as? [String: Any] else {
+                return
+            }
+            
+            for (_, record) in requestedData {
+                let dayRecord = record as! [String: Any]
                 
-                guard snapshot.value != nil else {
-                    return
-                }
-                
-                guard let requestedDayData = snapshot.value as? NSDictionary else {
-                    return
-                }
-                for (category, value) in requestedDayData {
-                    if let requestedCategory = self.suppliedData[category as! String]?[value as! String] {
-                        print("Requested category found!")
-                        self.suppliedData[category as! String]?[value as! String] = requestedCategory + 1
-                        print("New value for value \(value) as \(requestedCategory)")
+                for (category, answer) in dayRecord {
+                    if let requestedCategory = self.suppliedData[category]?[record as! String] {
+                        self.suppliedData[category]?[record as! String] = requestedCategory
                     }
                 }
-                debugPrint(self.suppliedData)
-            })
+            }
+            
         }
+        
+//        var evaluatedDate = weekAgo!
+//        while evaluatedDate.compare(today) != .orderedSame {
+//            print(fmt.string(from: evaluatedDate))
+//            evaluatedDate = usedCalendar.date(byAdding: .day, value: 1, to: evaluatedDate)!
+//            let evaluatedDateComponents = (usedCalendar as NSCalendar).components([.year, .month, .day], from: evaluatedDate)
+////            DatabaseConstants.fetchDataForDate(userID: userID, year: evaluatedDateComponents.year!, month: evaluatedDateComponents.month!, day: evaluatedDateComponents.day!, completion: { (snapshot) in
+////                debugPrint(snapshot)
+////                
+////                guard snapshot.value != nil else {
+////                    return
+////                }
+////                
+////                guard let requestedDayData = snapshot.value as? NSDictionary else {
+////                    return
+////                }
+////                for (category, value) in requestedDayData {
+////                    if let requestedCategory = self.suppliedData[category as! String]?[value as! String] {
+////                        print("Requested category found!")
+////                        self.suppliedData[category as! String]?[value as! String] = requestedCategory + 1
+////                        print("New value for value \(value) as \(requestedCategory)")
+////                    }
+////                }
+////                debugPrint(self.suppliedData)
+////            })
+//            
+//            
+//        }
         
         self.collectionView!.backgroundColor = UIColor.init(hexString: "#F9F9F9")
         
