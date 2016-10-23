@@ -26,6 +26,12 @@ class SurveyScoreIndicatorView: UIView {
     override func draw(_ rect: CGRect) {
         // radius
         guard colors != nil else {
+            guard layer.sublayers != nil else {
+                return
+            }
+            for sub in layer.sublayers! {
+                sub.removeFromSuperlayer()
+            }
             return
         }
         

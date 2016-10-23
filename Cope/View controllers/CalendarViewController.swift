@@ -43,7 +43,7 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         super.viewDidLoad()
         calendarView.dataSource = self
         calendarView.delegate = self
-        calendarView.registerCellViewXib(fileName: "DayCellView")
+        calendarView.registerCellViewXib(file: "DayCellView")
         
         calendarView.scrollEnabled = false
         
@@ -73,6 +73,8 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         DatabaseConstants.fetchSurveyDataForMonth(userID: userID, year: 2016, month: 10) { (snapshot) in
             print("Sourced from new fetch:")
             debugPrint(snapshot)
+            
+            self.requestedMonthRecords.removeAll()
             
             guard let requestedData = snapshot.value as? [String: Any] else {
                 return
@@ -110,12 +112,14 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func configureCalendar(_ calendar: JTAppleCalendarView) -> (startDate: Date, endDate: Date, numberOfRows: Int, calendar: Calendar) {
+
+    public func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
+        formatter.timeZone = TimeZone.current
         
-        let usedCalendar = Calendar.current
+        var usedCalendar = Calendar(identifier: .gregorian)
+        usedCalendar.timeZone = TimeZone(abbreviation: "GMT")!
         
         let dateComponents = (usedCalendar as NSCalendar).components([.month , .year], from: Date())
         let startOfMonth = usedCalendar.date(from: dateComponents)!
@@ -127,10 +131,11 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         
         let numberOfCalendarRows = 6
         
-        return (startDate: startOfMonth, endDate: endOfMonth, numberOfRows: numberOfCalendarRows, calendar: usedCalendar)
+        return ConfigurationParameters(startDate: startOfMonth, endDate: endOfMonth, numberOfRows: numberOfCalendarRows, calendar: .gregorian, generateInDates: .forAllMonths, generateOutDates: .tillEndOfGrid, firstDayOfWeek: .sunday)
+
     }
-    
-    func calendar(_ calendar: JTAppleCalendarView, isAboutToDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
+
+    func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
         let dayCell = cell as! DayCellView
         
         dayCell.setupCellBeforeDisplay(cellState, date: date)
@@ -139,7 +144,7 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         // apply score colors here
         
         dayCell.backgroundColor = UIColor(hexString: "#FCFCFC")
-        if cellState.dateBelongsTo == .thisMonth{
+        if cellState.dateBelongsTo == .thisMonth {
             guard requestedMonthRecords.count > 0 else {
                 return
             }
@@ -154,6 +159,7 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
             })
             
             guard dayRecords.count > 0 else {
+                dayCell.surveyScoreIndicatorView.colors = nil
                 return
             }
             
