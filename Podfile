@@ -16,6 +16,7 @@ pod 'Firebase/Core' # Core firebase
 pod 'Firebase/Database' # Firebase Real-time Database
 pod 'Firebase/Auth' # Firebase Authentication
 pod 'FirebaseUI', '~> 0.5' # For Login UI
+pod 'GoogleAuthUtilities'
 #pod 'IGListKit'
 
 pod 'Fabric'

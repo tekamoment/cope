@@ -48,7 +48,7 @@ class DayCellView: JTAppleDayCellView {
                 layer.shadowOpacity = 1.0
                 layer.shadowRadius = 2.0
                 
-                layer.borderColor = UIColor(hexString: "#FCFCFC").cgColor
+                layer.borderColor = UIColor(hexString: "#FCFCFC")!.cgColor
                 layer.borderWidth = 1.0
                 
                 self.shadowLayer = layer

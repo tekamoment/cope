@@ -96,7 +96,7 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         let numberOfCalendarRows = 6
         
         // change start to user-start and end to today 
-        return ConfigurationParameters(startDate: startOfMonth, endDate: endOfMonth, numberOfRows: numberOfCalendarRows, calendar: .gregorian, generateInDates: .forAllMonths, generateOutDates: .tillEndOfGrid, firstDayOfWeek: .sunday)
+        return ConfigurationParameters(startDate: startOfMonth, endDate: endOfMonth, numberOfRows: numberOfCalendarRows, calendar: Calendar(identifier: .gregorian), generateInDates: .forAllMonths, generateOutDates: .tillEndOfGrid, firstDayOfWeek: .sunday)
 
     }
 
