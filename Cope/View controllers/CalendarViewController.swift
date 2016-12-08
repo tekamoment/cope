@@ -16,9 +16,6 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     
     @IBOutlet weak var monthYearLabel: UILabel!
-    @IBOutlet weak var wellnessScoreLabel: UILabel!
-    @IBOutlet weak var summaryLabel: UILabel!
-    @IBOutlet weak var reccommendationLabel: UILabel!
     
     @IBOutlet weak var previousMonthButton: UIButton!
     @IBOutlet weak var nextMonthButton: UIButton!
@@ -45,7 +42,10 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "DayCellView")
         
-        calendarView.scrollEnabled = false
+//        calendarView.scrollEnabled = false
+//        calendarView.scrollingMode = .stopAtEachCalendarFrameWidth
+        
+        calendarView.scrollEnabled = true
         
         calendarView.cellInset = CGPoint(x: 1, y: 1)
         
@@ -63,48 +63,12 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         surveyRecordDateFormatter.timeZone = TimeZone(abbreviation: "GMT")
         surveyRecordDateFormatter.dateFormat = DatabaseConstants.surveyTimeStorageFormat
         
-        // firebase fetch
-//        DatabaseConstants.fetchDataForMonth(userID: userID, year: 2016, month: 10) { (snapshot) in
-//            debugPrint(snapshot)
-//            self.requestedMonthData = snapshot.value as? NSDictionary
-//            self.calendarView.reloadData()
-//        }
-//        
-        DatabaseConstants.fetchSurveyDataForMonth(userID: userID, year: 2016, month: 10) { (snapshot) in
-            print("Sourced from new fetch:")
-            debugPrint(snapshot)
-            
-            self.requestedMonthRecords.removeAll()
-            
-            guard let requestedData = snapshot.value as? [String: Any] else {
-                return
-            }
-            
-            for (date, record) in requestedData {
-                let dayRecord = record as! [String: Any]
-                
-                var answers = [SymptomAnswer]()
-                var score: Double = 0.0
-                
-                for (category, answer) in dayRecord {
-                    if category == DatabaseConstants.score {
-                        score = answer as! Double
-                        continue
-                    }
-                    
-                    answers.append(SymptomAnswer(category: category, answer: answer as! String, value: 0.0))
-                }
-                
-                self.requestedMonthRecords.append(SurveyRecord(date: self.surveyRecordDateFormatter.date(from: date)!, answers: answers, score: score))
-            }
-            debugPrint(self.requestedMonthRecords)
-            self.calendarView.reloadData()
-        }
+        fetchData(year: 2016, month: 10)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.tabBarController!.title = NSLocalizedString("calendar", comment: "Calendar")
-        view.layoutSubviews()
+//        view.layoutSubviews()
     }
 
 
@@ -131,6 +95,7 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         
         let numberOfCalendarRows = 6
         
+        // change start to user-start and end to today 
         return ConfigurationParameters(startDate: startOfMonth, endDate: endOfMonth, numberOfRows: numberOfCalendarRows, calendar: .gregorian, generateInDates: .forAllMonths, generateOutDates: .tillEndOfGrid, firstDayOfWeek: .sunday)
 
     }
@@ -140,8 +105,6 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         
         dayCell.setupCellBeforeDisplay(cellState, date: date)
         dayCell.surveyScoreIndicatorView.backgroundColor = UIColor.clear
-        
-        // apply score colors here
         
         dayCell.backgroundColor = UIColor(hexString: "#FCFCFC")
         if cellState.dateBelongsTo == .thisMonth {
@@ -187,6 +150,8 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
             }
             
             dayCell.surveyScoreIndicatorView.colors = colors
+        } else {
+            dayCell.surveyScoreIndicatorView.colors = nil
         }
         
     }
@@ -210,19 +175,7 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         (cell as! DayCellView).setupCellBeforeDisplay(cellState, date: date)
         
         
-        // set data displayed
-        
-        // refactor check out to own function
-//        let dayComponent = (usedCalendar as NSCalendar).components([.day], from: date)
-//        
-//        guard requestedMonthData != nil, let dayData = requestedMonthData!["\(dayComponent.day!)"] as? NSDictionary, let score = dayData["score"] as? Double else {
-//            wellnessScoreLabel.text = "You do not have data for this day."
-//            return
-//        }
-//        
-//        // FORMAT DATES CORRECTLY ACCORDING TO INTERNATIONALIZATION
-//        wellnessScoreLabel.text = "Your wellness score for this day is \(score)."
-//        summaryLabel.text = "You had \(NSLocalizedString(dayData["sleepCategory"] as! String, comment:"Hours of sleep a user had")) of sleep, were \(NSLocalizedString(dayData["emotionCategory"] as! String, comment:"User's emotion"))"
+        // trigger segue
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
@@ -240,6 +193,39 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         requestNewMonth(direction: .forward)
     }
     
+    func fetchData(year: Int, month: Int) {
+        DatabaseConstants.fetchSurveyDataForMonth(userID: userID, year: year, month: month) { (snapshot) in
+            print("Sourced from new fetch:")
+            debugPrint(snapshot)
+            
+            self.requestedMonthRecords.removeAll()
+            
+            guard let requestedData = snapshot.value as? [String: Any] else {
+                return
+            }
+            
+            for (date, record) in requestedData {
+                let dayRecord = record as! [String: Any]
+                
+                var answers = [SymptomAnswer]()
+                var score: Double = 0.0
+                
+                for (category, answer) in dayRecord {
+                    if category == DatabaseConstants.score {
+                        score = answer as! Double
+                        continue
+                    }
+                    
+                    answers.append(SymptomAnswer(category: category, answer: answer as! String, value: 0.0))
+                }
+                
+                self.requestedMonthRecords.append(SurveyRecord(date: self.surveyRecordDateFormatter.date(from: date)!, answers: answers, score: score))
+            }
+            debugPrint(self.requestedMonthRecords)
+            self.calendarView.reloadData()
+        }
+    }
+    
     func requestNewMonth(direction: Direction) {
         var addComponents = DateComponents()
         
@@ -247,13 +233,15 @@ class CalendarViewController: UIViewController, JTAppleCalendarViewDataSource, J
         case .forward:
             addComponents.month = 1
             addComponents.day = -1
+            
         
         case .backward: break
         }
         
         requestedDate = usedCalendar.date(byAdding: addComponents, to: requestedDate)!
+        calendarView.scrollToDate(requestedDate)
         
-        calendarView.reloadData()
+        
         monthYearLabel.text = monthYearLabelDateFormatter.string(from: requestedDate)
     }
     

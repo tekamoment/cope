@@ -12,7 +12,7 @@ import Charts
 
 private let reuseIdentifier = "chartCell"
 
-class SummaryCollectionViewController: UICollectionViewController {
+class SummaryCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     let userID = "tester"
     let surveyData = DatabaseConstants.surveyData
@@ -26,6 +26,8 @@ class SummaryCollectionViewController: UICollectionViewController {
         
         dataRef = FIRDatabase.database().reference().child("users").child(userID).child(surveyData)
         
+        
+        collectionView?.delegate = self
         
         guard let path = Bundle.main.path(forResource: "Questions", ofType: "plist"), let questions = NSArray(contentsOfFile: path) as? [[String: AnyObject]] else {
             return
@@ -45,7 +47,6 @@ class SummaryCollectionViewController: UICollectionViewController {
             suppliedData[quest["questionCategory"] as! String] = choiceHolder
             categories.append(quest["questionCategory"] as! String)
         }
-        
 //         deconstruct device day
         let today = Date()
         let usedCalendar = Calendar(identifier: .gregorian)
@@ -59,51 +60,20 @@ class SummaryCollectionViewController: UICollectionViewController {
             
             for (_, record) in requestedData {
                 let dayRecord = record as! [String: Any]
-                
+                debugPrint(dayRecord)
                 for (category, answer) in dayRecord {
-                    if let requestedCategory = self.suppliedData[category]?[record as! String] {
-                        self.suppliedData[category]?[record as! String] = requestedCategory
+                    if let requestedCategory = self.suppliedData[category]?[answer as! String] {
+                        self.suppliedData[category]?[answer as! String] = requestedCategory + 1
                     }
                 }
             }
-            
+            self.collectionView?.reloadData()
         }
-        
-//        var evaluatedDate = weekAgo!
-//        while evaluatedDate.compare(today) != .orderedSame {
-//            print(fmt.string(from: evaluatedDate))
-//            evaluatedDate = usedCalendar.date(byAdding: .day, value: 1, to: evaluatedDate)!
-//            let evaluatedDateComponents = (usedCalendar as NSCalendar).components([.year, .month, .day], from: evaluatedDate)
-////            DatabaseConstants.fetchDataForDate(userID: userID, year: evaluatedDateComponents.year!, month: evaluatedDateComponents.month!, day: evaluatedDateComponents.day!, completion: { (snapshot) in
-////                debugPrint(snapshot)
-////                
-////                guard snapshot.value != nil else {
-////                    return
-////                }
-////                
-////                guard let requestedDayData = snapshot.value as? NSDictionary else {
-////                    return
-////                }
-////                for (category, value) in requestedDayData {
-////                    if let requestedCategory = self.suppliedData[category as! String]?[value as! String] {
-////                        print("Requested category found!")
-////                        self.suppliedData[category as! String]?[value as! String] = requestedCategory + 1
-////                        print("New value for value \(value) as \(requestedCategory)")
-////                    }
-////                }
-////                debugPrint(self.suppliedData)
-////            })
-//            
-//            
-//        }
-        
+
         self.collectionView!.backgroundColor = UIColor.init(hexString: "#F9F9F9")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-//        self.collectionView!.register(SummaryChartCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -146,7 +116,6 @@ class SummaryCollectionViewController: UICollectionViewController {
         var xIndex = 0
         
         for (answer, count) in dataForCell {
-//            let dataEntry = BarChartDataEntry(value: Double(count), xIndex: xIndex)
             let dataEntry = BarChartDataEntry(x: Double(xIndex), y: Double(count))
             dataEntries.append(dataEntry)
             answers.append(answer)
@@ -154,13 +123,19 @@ class SummaryCollectionViewController: UICollectionViewController {
         }
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: nil)
-//        let chartData = BarChartData(xVals: answers, dataSet: chartDataSet)
         let chartData = BarChartData(dataSet: chartDataSet)
         cell.barChartView.data = chartData
 
         // Configure the cell
     
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let margin: CGFloat = 23.0
+        let width = self.view.frame.size.width - CGFloat(margin * 2)
+        let height: CGFloat = 205.5
+        return CGSize(width: width, height: height)
     }
     
 

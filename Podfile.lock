@@ -8,102 +8,113 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
-  - Charts (3.0.0):
-    - Charts/Core (= 3.0.0)
-  - Charts/Core (3.0.0)
+  - Charts (3.0.1):
+    - Charts/Core (= 3.0.1)
+  - Charts/Core (3.0.1)
   - Eureka (2.0.0-beta.1)
-  - Fabric (1.6.10)
-  - FBSDKCoreKit (4.16.1):
+  - Fabric (1.6.11)
+  - FBSDKCoreKit (4.18.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.16.1):
+  - FBSDKLoginKit (4.18.0):
     - FBSDKCoreKit
-  - Firebase (3.7.1):
-    - Firebase/Core (= 3.7.1)
-  - Firebase/Auth (3.7.1):
+  - Firebase (3.10.0):
+    - Firebase/Core (= 3.10.0)
+  - Firebase/Auth (3.10.0):
     - Firebase/Core
-    - FirebaseAuth (= 3.0.5)
-  - Firebase/Core (3.7.1):
-    - FirebaseAnalytics (= 3.4.4)
-    - FirebaseCore (= 3.4.3)
-  - Firebase/Database (3.7.1):
+    - FirebaseAuth (= 3.0.6)
+  - Firebase/Core (3.10.0):
+    - FirebaseAnalytics (= 3.6.0)
+    - FirebaseCore (= 3.4.5)
+  - Firebase/Database (3.10.0):
     - Firebase/Core
-    - FirebaseDatabase (= 3.0.3)
-  - Firebase/Storage (3.7.1):
+    - FirebaseDatabase (= 3.1.1)
+  - Firebase/Storage (3.10.0):
     - Firebase/Core
-    - FirebaseStorage (= 1.0.3)
-  - FirebaseAnalytics (3.4.4):
+    - FirebaseStorage (= 1.0.5)
+  - FirebaseAnalytics (3.6.0):
     - FirebaseCore (~> 3.4)
     - FirebaseInstanceID (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
     - GoogleSymbolUtilities (~> 1.1)
-  - FirebaseAuth (3.0.5):
-    - FirebaseAnalytics (~> 3.3)
-    - GoogleNetworkingUtilities (~> 1.2)
-    - GoogleUtilities (~> 1.2)
-  - FirebaseCore (3.4.3):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseAuth (3.0.6):
+    - FirebaseAnalytics (~> 3.4)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseCore (3.4.5):
     - GoogleInterchangeUtilities (~> 1.2)
-    - GoogleUtilities (~> 1.2)
-  - FirebaseDatabase (3.0.3):
-    - FirebaseAnalytics (~> 3.3)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (3.1.1):
+    - FirebaseAnalytics (~> 3.5)
   - FirebaseInstanceID (1.0.8)
-  - FirebaseStorage (1.0.3):
-    - FirebaseAnalytics (~> 3.3)
-    - GoogleNetworkingUtilities (~> 1.2)
-  - FirebaseUI (0.6.2):
-    - FirebaseUI/All (= 0.6.2)
-  - FirebaseUI/All (0.6.2):
+  - FirebaseStorage (1.0.5):
+    - FirebaseAnalytics (~> 3.5)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseUI (0.7.0):
+    - FirebaseUI/All (= 0.7.0)
+  - FirebaseUI/All (0.7.0):
     - FirebaseUI/Auth
     - FirebaseUI/Database
     - FirebaseUI/Facebook
     - FirebaseUI/Google
     - FirebaseUI/Storage
     - FirebaseUI/Twitter
-  - FirebaseUI/Auth (0.6.2):
+  - FirebaseUI/Auth (0.7.0):
     - Firebase/Auth
-  - FirebaseUI/Database (0.6.2):
+  - FirebaseUI/Database (0.7.0):
     - Firebase/Database
-  - FirebaseUI/Facebook (0.6.2):
+  - FirebaseUI/Facebook (0.7.0):
     - FBSDKLoginKit (~> 4.0)
     - FirebaseUI/Auth
-  - FirebaseUI/Google (0.6.2):
+  - FirebaseUI/Google (0.7.0):
     - FirebaseUI/Auth
     - GoogleSignIn (~> 4.0)
-  - FirebaseUI/Storage (0.6.2):
+  - FirebaseUI/Storage (0.7.0):
     - Firebase/Storage
     - SDWebImage
-  - FirebaseUI/Twitter (0.6.2):
+  - FirebaseUI/Twitter (0.7.0):
     - FirebaseUI/Auth
     - TwitterKit (~> 2.4)
   - GoogleAppUtilities (1.1.2):
     - GoogleSymbolUtilities (~> 1.1)
-  - GoogleAuthUtilities (2.0.2):
-    - GoogleNetworkingUtilities (~> 1.2)
-    - GoogleSymbolUtilities (~> 1.1)
   - GoogleInterchangeUtilities (1.2.2):
     - GoogleSymbolUtilities (~> 1.1)
-  - GoogleNetworkingUtilities (1.2.2):
-    - GoogleSymbolUtilities (~> 1.1)
-  - GoogleSignIn (4.0.0):
+  - GoogleSignIn (4.0.1):
     - GoogleAppUtilities (~> 1.1)
-    - GoogleAuthUtilities (~> 2.0)
-    - GoogleNetworkingUtilities (~> 1.2)
-    - GoogleUtilities (~> 1.3)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleSymbolUtilities (1.1.2)
-  - GoogleUtilities (1.3.2):
-    - GoogleSymbolUtilities (~> 1.1)
-  - JTAppleCalendar (6.0.0)
+  - GoogleToolboxForMac/DebugUtils (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+  - GoogleToolboxForMac/Defines (2.1.0)
+  - GoogleToolboxForMac/NSData+zlib (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.0):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.0)
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
+  - GTMOAuth2 (1.1.4):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.1.7):
+    - GTMSessionFetcher/Full (= 1.1.7)
+  - GTMSessionFetcher/Core (1.1.7)
+  - GTMSessionFetcher/Full (1.1.7):
+    - GTMSessionFetcher/Core (= 1.1.7)
+  - JTAppleCalendar (6.0.5)
   - KCFloatingActionButton (2.1.1)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - TagListView (1.1.0)
-  - TwitterCore (2.5.0):
+  - TwitterCore (2.6.1):
     - Fabric
-  - TwitterKit (2.5.0):
-    - TwitterCore (= 2.5.0)
+  - TwitterKit (2.6.1):
+    - TwitterCore (= 2.6.1)
 
 DEPENDENCIES:
-  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`, branch `swift3`)
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Charts (from `https://github.com/danielgindi/Charts.git`)
   - Eureka (from `https://github.com/xmartlabs/Eureka.git`)
   - Fabric
@@ -121,7 +132,6 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   ChameleonFramework:
-    :branch: swift3
     :git: https://github.com/ViccAlexander/Chameleon.git
   Charts:
     :git: https://github.com/danielgindi/Charts.git
@@ -137,54 +147,54 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   ChameleonFramework:
-    :commit: c400c32eead1c6e74008983c3e7c845ae069b41d
+    :commit: dcf98f9bf3a632a7f40679b7da46f09681e48526
     :git: https://github.com/ViccAlexander/Chameleon.git
   Charts:
-    :commit: 8ef870a6fa21ba585236096ac0ddc71d12d16204
+    :commit: 5d9c81ab7f440e231c6d283c517eaabc2ba4bb4e
     :git: https://github.com/danielgindi/Charts.git
   Eureka:
-    :commit: d5232163a8be8342b88360c2e6d9cf3d294b039d
+    :commit: 72a975a031063e67f69e3a775b8bf61d0acc8c6a
     :git: https://github.com/xmartlabs/Eureka.git
   JTAppleCalendar:
-    :commit: ff34617505b5b9a3101a69aef95165e66d580040
+    :commit: d49cb8cb44683f3272280c9533f1af91537a81cc
     :git: https://github.com/patchthecode/JTAppleCalendar.git
   KCFloatingActionButton:
     :commit: 93544f98333b06bf81226b32524d39e4a61d8ad1
     :git: https://github.com/kciter/KCFloatingActionButton.git
   TagListView:
-    :commit: c060ba52090f8baebbf0904a26aa7397e137484d
+    :commit: b9232a70bc85f87d9008c61ef1a6669a1253c51c
     :git: https://github.com/xhacker/TagListView.git
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  Charts: 3f0da988b104c8e5f069fcef55da699f597dac67
+  Charts: e1c22ca0f52867fadf8ee16ff723dfb0b464eb91
   Eureka: d014adf16406745e1a78d5790ea37ed130a0a8e5
-  Fabric: c73f371ee543e3f0b80608f2674750e4910d1669
-  FBSDKCoreKit: 6feac4e8921ccd7afa83fb1df6291dc6eec42c7c
-  FBSDKLoginKit: 469a56cebe2e1ed62b1621d0b155970fd6aac2d8
-  Firebase: be473484f0d515e72ffd04acf22f981773c23e58
-  FirebaseAnalytics: 0533a00b681e08fd0b2cd0444b7ddf0ef9fd7a1a
-  FirebaseAuth: 75a062bbf2d3c97d1e6e55bbc110e13a6853e25d
-  FirebaseCore: 5a885548bbc5f0c410b04f8e9ac9d73ff1221907
-  FirebaseDatabase: 750a4a0fe18ef114318876fd654b2d9c671e0992
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  FBSDKCoreKit: 15fef8804a4629f98c6f4e55e81a76c9d725d85e
+  FBSDKLoginKit: 6773073e970b2b15fb12e451ce7f11da0532b880
+  Firebase: 387f37c7dca894a02708da9ff35ba147040eae9e
+  FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
+  FirebaseAuth: 96e9674ff31d6e1f826d53e26aa003a57cab0295
+  FirebaseCore: 1e383fdfe37b6b5d6ff88e84204bdee30276af0f
+  FirebaseDatabase: 6de92187481ff0e8e124064f21742e95ee883b02
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
-  FirebaseStorage: 3992817bf405f5c1a4f8349678d22724cd0ef509
-  FirebaseUI: c6579dbd268ff63e07e308626ff818708d7c6160
+  FirebaseStorage: 5738284835edb57f0e81d4ae5832bb17c1e4b5fa
+  FirebaseUI: 6b22f02b8992fd921116b59e8dcda688c4072517
   GoogleAppUtilities: a8a552aa74f6597f805e45b5a3962766c3134973
-  GoogleAuthUtilities: ccad2e0a9284699973ff57c0dd24c3893657fda4
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
-  GoogleNetworkingUtilities: 3edd3a8161347494f2da60ea0deddc8a472d94cb
-  GoogleSignIn: 09036ed61f8e75f1424100d63f7719480b2428c3
+  GoogleSignIn: a8694c0a8e6d1b0ec77c58014de5bfd4ba2fa766
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
-  GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
-  JTAppleCalendar: 374d7d6309b4c40a41be4167fe4cc3b935831da1
-  KCFloatingActionButton: 084cfe9d16b741be33393c99757f5967296c7645
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
+  GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
+  GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  JTAppleCalendar: 1166aeef9c6ce875518ab3c89aac3926ea2546d6
+  KCFloatingActionButton: '084cfe9d16b741be33393c99757f5967296c7645'
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   TagListView: 8294e9e860ca59c94f226243ce3aadf8c44add1c
-  TwitterCore: 95c46af93112768a7983bd370d66023553601d01
-  TwitterKit: dd8042698b0ff5bd3066fa919b3b2b50d8eed829
+  TwitterCore: a8aea8bdaf2abd6572c8f264707a4ea4dc2d0eab
+  TwitterKit: d38c08d31dfd4ba604f95deca6cf8e174b5cbd96
 
-PODFILE CHECKSUM: f202fdf2ce140ef75ea0b22963c83304e166c549
+PODFILE CHECKSUM: d99f442893bc932d40b7beb7eed501cc18b96b22
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.1.1

@@ -29,6 +29,8 @@
 		18A454DD1D7DE727003B1190 /* DayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A454DC1D7DE727003B1190 /* DayCellView.xib */; };
 		18A454DF1D7DE761003B1190 /* DayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A454DE1D7DE761003B1190 /* DayCellView.swift */; };
 		18A454E11D7E48D1003B1190 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A454E01D7E48D1003B1190 /* CalendarViewController.swift */; };
+		18C54C801DBD107800B67626 /* SummaryCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C54C7F1DBD107800B67626 /* SummaryCellView.xib */; };
+		18C54C821DBDB0DF00B67626 /* PrognosisFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C54C811DBDB0DF00B67626 /* PrognosisFormViewController.swift */; };
 		18D7D4881DA40AA900ADEFD5 /* ViewMedicationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7D4871DA40AA900ADEFD5 /* ViewMedicationsViewController.swift */; };
 		18EC78BB1D90EF0B004C0F0F /* Questions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18EC78BA1D90EF0B004C0F0F /* Questions.plist */; };
 		18EC78C21D90F58F004C0F0F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18EC78C01D90F58F004C0F0F /* Localizable.strings */; };
@@ -80,6 +82,8 @@
 		18A454DC1D7DE727003B1190 /* DayCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DayCellView.xib; path = Views/DayCellView.xib; sourceTree = "<group>"; };
 		18A454DE1D7DE761003B1190 /* DayCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DayCellView.swift; path = Views/DayCellView.swift; sourceTree = "<group>"; };
 		18A454E01D7E48D1003B1190 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = "View controllers/CalendarViewController.swift"; sourceTree = "<group>"; };
+		18C54C7F1DBD107800B67626 /* SummaryCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SummaryCellView.xib; path = Views/SummaryCellView.xib; sourceTree = "<group>"; };
+		18C54C811DBDB0DF00B67626 /* PrognosisFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrognosisFormViewController.swift; path = "View controllers/PrognosisFormViewController.swift"; sourceTree = "<group>"; };
 		18D7D4871DA40AA900ADEFD5 /* ViewMedicationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewMedicationsViewController.swift; path = "View controllers/ViewMedicationsViewController.swift"; sourceTree = "<group>"; };
 		18EC78BA1D90EF0B004C0F0F /* Questions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Questions.plist; path = "Additional information/Questions.plist"; sourceTree = "<group>"; };
 		18EC78BF1D90F559004C0F0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 		1838B04C1D8D842800FB2E36 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				18C54C7F1DBD107800B67626 /* SummaryCellView.xib */,
 				18168D511DAC00BD00705438 /* SurveyScoreIndicatorView.swift */,
 				18A454DC1D7DE727003B1190 /* DayCellView.xib */,
 				18168D4F1DA80E4800705438 /* DosageCell.swift */,
@@ -162,6 +167,7 @@
 				182B4E0B1D9ADDF500EBCFEE /* LoginViewController.swift */,
 				18EC78C31D91148F004C0F0F /* SymptomsViewController.swift */,
 				1860C2281D7EA73A005A636A /* AddMedicationFormViewController.swift */,
+				18C54C811DBDB0DF00B67626 /* PrognosisFormViewController.swift */,
 				187B96811D9ED71A00BB6B6B /* MedicationsViewController.swift */,
 				182B4E0E1D9AECA900EBCFEE /* EmailSignupViewController.swift */,
 				18A454E01D7E48D1003B1190 /* CalendarViewController.swift */,
@@ -361,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C54C801DBD107800B67626 /* SummaryCellView.xib in Resources */,
 				18F35DF11D76ACF1004E721B /* LaunchScreen.storyboard in Resources */,
 				18EC78C21D90F58F004C0F0F /* Localizable.strings in Resources */,
 				18A454DD1D7DE727003B1190 /* DayCellView.xib in Resources */,
@@ -469,6 +476,7 @@
 				18F35DE51D76ACF1004E721B /* AppDelegate.swift in Sources */,
 				187B96821D9ED71A00BB6B6B /* MedicationsViewController.swift in Sources */,
 				182B4E0F1D9AECA900EBCFEE /* EmailSignupViewController.swift in Sources */,
+				18C54C821DBDB0DF00B67626 /* PrognosisFormViewController.swift in Sources */,
 				18D7D4881DA40AA900ADEFD5 /* ViewMedicationsViewController.swift in Sources */,
 				18A454DF1D7DE761003B1190 /* DayCellView.swift in Sources */,
 				18EC78C41D91148F004C0F0F /* SymptomsViewController.swift in Sources */,

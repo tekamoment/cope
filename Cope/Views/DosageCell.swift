@@ -13,3 +13,7 @@ import TagListView
 class DosageCell: Cell<Set<Dosage>>, CellType {
 
 }
+
+struct DosageTime {
+    
+}

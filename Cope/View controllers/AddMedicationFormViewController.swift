@@ -32,7 +32,7 @@ class AddMedicationFormViewController: FormViewController {
             <<< SwitchRow() { row in
                 row.title = "Reminder"
             }
-            <<< IntRow() { row in
+            <<< TextRow() { row in
                 row.title = "Dosage"
                 row.placeholder = "Optional"
             }

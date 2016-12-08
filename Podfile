@@ -10,12 +10,13 @@ pod 'KCFloatingActionButton', :git => 'https://github.com/kciter/KCFloatingActio
 pod 'Charts', :git => "https://github.com/danielgindi/Charts.git" # for the charts in the summary view
 pod 'Eureka', :git => 'https://github.com/xmartlabs/Eureka.git' # , :branch => 'Swift3' # for the forms
 pod 'TagListView', :git => "https://github.com/xhacker/TagListView.git", :branch => 'master' # for the "Taken on Times" cell
-pod 'ChameleonFramework/Swift', :git => "https://github.com/ViccAlexander/Chameleon.git", :branch => 'swift3' # for colour management
+pod 'ChameleonFramework/Swift', :git => "https://github.com/ViccAlexander/Chameleon.git"  # for colour management
 pod 'Firebase'
 pod 'Firebase/Core' # Core firebase
 pod 'Firebase/Database' # Firebase Real-time Database
 pod 'Firebase/Auth' # Firebase Authentication
 pod 'FirebaseUI', '~> 0.5' # For Login UI
+#pod 'IGListKit'
 
 pod 'Fabric'
 pod 'TwitterKit'
