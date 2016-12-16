@@ -41,7 +41,16 @@
 		18F35DF11D76ACF1004E721B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F35DEF1D76ACF1004E721B /* LaunchScreen.storyboard */; };
 		18F35DFC1D76ACF2004E721B /* CopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F35DFB1D76ACF2004E721B /* CopeTests.swift */; };
 		18F35E071D76ACF2004E721B /* CopeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F35E061D76ACF2004E721B /* CopeUITests.swift */; };
+		4281949F3445336D4DE7887D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B348CA0594F3DB46C29881AC /* CoreMedia.framework */; };
+		44CADA12259E2D5F983F0AB0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356EAD0557D179CA7706D877 /* QuartzCore.framework */; };
+		6422A86DBB5E78A466965414 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BDD0D09915DBEB750EC0D8C /* AssetsLibrary.framework */; };
+		6B01406A9192B97031797D65 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F8D8F931AE8B56AC51E0843 /* AVFoundation.framework */; };
+		8172006D5F270C99CDA77EDA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DDD0BA822B6FB02398C555 /* CoreTelephony.framework */; };
 		9FEB863F751C81E819D65BBC /* Pods_Cope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F455E059B8FB39CB5B479090 /* Pods_Cope.framework */; };
+		C83897E6D95044A50C8C8242 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03647EF7E1A4721BAF057310 /* SystemConfiguration.framework */; };
+		D5BE447347339A2D7668FCFF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBE2BE4B320E3CCF00DA1D0 /* CoreText.framework */; };
+		DE70385CC5653E311A02A345 /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78146761A37B42402EA562E /* BuddyBuildSDK.framework */; };
+		F6F50B0820E89326EBB69CBE /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F7D6B6CA90155487315B3D /* CoreVideo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03647EF7E1A4721BAF057310 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		18011F9D1D8C5A33002D3B7C /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Medication.swift; path = Models/Medication.swift; sourceTree = "<group>"; };
 		18011F9F1D8C5BBA002D3B7C /* SymptomQuestionnaire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SymptomQuestionnaire.swift; path = Models/SymptomQuestionnaire.swift; sourceTree = "<group>"; };
 		18011FA11D8C5E0F002D3B7C /* Wellness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Wellness.swift; path = Models/Wellness.swift; sourceTree = "<group>"; };
@@ -102,7 +112,16 @@
 		18F35E061D76ACF2004E721B /* CopeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopeUITests.swift; sourceTree = "<group>"; };
 		18F35E081D76ACF2004E721B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2070AAA8FFFA04D1E6C936C3 /* Pods-Cope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cope.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cope/Pods-Cope.debug.xcconfig"; sourceTree = "<group>"; };
+		2F8D8F931AE8B56AC51E0843 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		34660174B92557A0552A7097 /* Pods-Cope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cope.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cope/Pods-Cope.release.xcconfig"; sourceTree = "<group>"; };
+		356EAD0557D179CA7706D877 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3BDD0D09915DBEB750EC0D8C /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		4119997CF15C83F92C424ECF /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		73F7D6B6CA90155487315B3D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		A78146761A37B42402EA562E /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
+		ABBE2BE4B320E3CCF00DA1D0 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		B348CA0594F3DB46C29881AC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		B5DDD0BA822B6FB02398C555 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		F455E059B8FB39CB5B479090 /* Pods_Cope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8012DB6D187DE97AB973FEE /* Pods_CopeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CopeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87C355E7D5DBC930251D164 /* Pods_CopeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CopeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +133,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FEB863F751C81E819D65BBC /* Pods_Cope.framework in Frameworks */,
+				DE70385CC5653E311A02A345 /* BuddyBuildSDK.framework in Frameworks */,
+				6422A86DBB5E78A466965414 /* AssetsLibrary.framework in Frameworks */,
+				D5BE447347339A2D7668FCFF /* CoreText.framework in Frameworks */,
+				8172006D5F270C99CDA77EDA /* CoreTelephony.framework in Frameworks */,
+				C83897E6D95044A50C8C8242 /* SystemConfiguration.framework in Frameworks */,
+				44CADA12259E2D5F983F0AB0 /* QuartzCore.framework in Frameworks */,
+				6B01406A9192B97031797D65 /* AVFoundation.framework in Frameworks */,
+				4281949F3445336D4DE7887D /* CoreMedia.framework in Frameworks */,
+				F6F50B0820E89326EBB69CBE /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +215,7 @@
 				18F35DE21D76ACF1004E721B /* Products */,
 				1EB6EE73833732AD41479600 /* Pods */,
 				F565769C08642C2397B229F5 /* Frameworks */,
+				4119997CF15C83F92C424ECF /* Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,6 +280,15 @@
 				F455E059B8FB39CB5B479090 /* Pods_Cope.framework */,
 				F87C355E7D5DBC930251D164 /* Pods_CopeTests.framework */,
 				F8012DB6D187DE97AB973FEE /* Pods_CopeUITests.framework */,
+				A78146761A37B42402EA562E /* BuddyBuildSDK.framework */,
+				3BDD0D09915DBEB750EC0D8C /* AssetsLibrary.framework */,
+				ABBE2BE4B320E3CCF00DA1D0 /* CoreText.framework */,
+				B5DDD0BA822B6FB02398C555 /* CoreTelephony.framework */,
+				03647EF7E1A4721BAF057310 /* SystemConfiguration.framework */,
+				356EAD0557D179CA7706D877 /* QuartzCore.framework */,
+				2F8D8F931AE8B56AC51E0843 /* AVFoundation.framework */,
+				B348CA0594F3DB46C29881AC /* CoreMedia.framework */,
+				73F7D6B6CA90155487315B3D /* CoreVideo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -650,6 +688,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AKTPE3FTGW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Cope/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -749,6 +791,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.carlosarcenas.Cope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -760,6 +803,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AKTPE3FTGW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Cope/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -859,6 +906,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.carlosarcenas.Cope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
