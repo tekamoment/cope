@@ -13,6 +13,8 @@ class AddMedicationFormViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView = super.tableView
+        self.navigationItem.title = "Add Medication"
+        
         form = Form()
         
         form +++ Section() { section in

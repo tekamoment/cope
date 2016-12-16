@@ -100,6 +100,8 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.0)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
+  - GoogleUtilities (1.3.2):
+    - GoogleSymbolUtilities (~> 1.1)
   - GTMOAuth2 (1.1.4):
     - GTMSessionFetcher (~> 1.1)
   - GTMSessionFetcher (1.1.7):
@@ -130,6 +132,7 @@ DEPENDENCIES:
   - Firebase/Database
   - FirebaseUI (~> 0.5)
   - GoogleAuthUtilities
+  - GoogleUtilities
   - JTAppleCalendar (from `https://github.com/patchthecode/JTAppleCalendar.git`)
   - KCFloatingActionButton (from `https://github.com/kciter/KCFloatingActionButton.git`)
   - TagListView (from `https://github.com/xhacker/TagListView.git`, branch `master`)
@@ -194,6 +197,7 @@ SPEC CHECKSUMS:
   GoogleSignIn: a8694c0a8e6d1b0ec77c58014de5bfd4ba2fa766
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
+  GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
   JTAppleCalendar: 1166aeef9c6ce875518ab3c89aac3926ea2546d6
@@ -203,6 +207,6 @@ SPEC CHECKSUMS:
   TwitterCore: a8aea8bdaf2abd6572c8f264707a4ea4dc2d0eab
   TwitterKit: d38c08d31dfd4ba604f95deca6cf8e174b5cbd96
 
-PODFILE CHECKSUM: 61f20be4f63abc14acb5afdcad4371c7de36e735
+PODFILE CHECKSUM: 12161d58923f72c25cf64a18ad7e7eabb2228a10
 
 COCOAPODS: 1.1.1

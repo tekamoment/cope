@@ -1213,6 +1213,10 @@ Copyright 2016 Google
    limitations under the License.
 
 
+## GoogleUtilities
+
+Copyright 2016 Google
+
 ## JTAppleCalendar
 
 Copyright (c) 2016 JayT <patchthecode@gmail.com>

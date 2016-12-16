@@ -77,6 +77,10 @@ class SummaryCollectionViewController: UICollectionViewController, UICollectionV
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationItem.title = "Summary"
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
